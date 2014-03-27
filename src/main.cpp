@@ -3,7 +3,7 @@
 #include <fstream>
 #include <string>
 #include <stdlib.h> 
-#include "altoHorno.h"
+#include "auxiliary.h"
 #include "hornoMatrix.h"
 
 using namespace std;

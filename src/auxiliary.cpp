@@ -1,5 +1,6 @@
 #include <sstream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -13,47 +14,31 @@ int strToInt(string convertMe) {
     return result;
 }
 
-vector<vector<int>> generateMatrix(int total_radios, int total_angles) {
-	vector<vector<int>> matrix;
-	for(int j = 0; j < total_radios; j++) {
-		for (int k = 0; k < total_angles; k++) {
-			fillRow(matrix[j], total_radios, total_angles, j, k);
-		}
-	}
-
-}
-
-void fillRow (vecto<int> &row, int total_radios, int total_angles, int radio, int angle) {
-	double neighbour_value;
-	for(int j = 0; j < total_radios; j++) {
-		for (int k = 0; k < total_angles; k++) {
-			if (is_neighbour(radio, angle, j, k)) {
-				neighbour_value = calculateNeighbourValue(radio, angle, j, k);
-				row.push_back(neighbour_value);
-			} else {
-				row.push_back(0);
-			}
-		}
-	} 
-}
-
-bool 
-int getLeft (int deltaRadio) {
-	return (1-deltaRadio) / (deltaRadio * deltaRadio);
-}
-
-int getUpper (int deltaAngle) {
-	return 1 / (deltaAngle * deltaAngle);
-}
-
-int getRight (int deltaRadio) {
-	return 1 / (deltaRadio * deltaRadio);
-}
-
-int getBottom (int deltaAngle) {
-	return 1 / (deltaAngle * deltaAngle);	
-}
-
-int getCenter (int deltaRadio, int deltaAngle) {
-	return ( ( -2 / (deltaRadio * deltaRadio) ) + ( 1 / deltaRadio) - ( 2 / (deltaAngle * deltaAngle) ) );
+vector<string> explode( const string &delimiter, const string &str)
+{
+    vector<string> arr;
+ 
+    int strleng = str.length();
+    int delleng = delimiter.length();
+    if (delleng==0)        
+        return arr;
+ 
+    int i=0;
+    int k=0;
+    while( i<strleng ) {
+        int j=0;
+        while (i+j<strleng && j<delleng && str[i+j]==delimiter[j])
+            j++;
+        
+        // found delimiter
+        if (j == delleng) {
+            arr.push_back(  str.substr(k, i-k) );
+            i+=delleng;
+            k=i;
+        } else {
+            i++;
+        }
+    }
+    arr.push_back(  str.substr(k, i-k) );
+    return arr;
 }
