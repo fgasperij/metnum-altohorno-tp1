@@ -7,12 +7,13 @@
 #include <limits>
 
 //Funciones de entrada salida pare leer y escribir datos en archivos.
-///******TODO****//// Revisar y testear....
 
 //Lee los datos basios del archivo. La primer linea.
 void leerDatosBasicos(string file, Data& data){
     ifstream file_s; file_s.open(file);
-    file_s >> data.rad_int >> data.rad_ext >> data.isoterma >> data.n >> data.m >> data.c;
+    file_s >> data.rad_int >> data.rad_ext >> data.n >> data.m >> data.isoterma >> data.c;
+    data.temp_ext = vector<double> (data.n);
+    data.temp_int = vector<double> (data.n);
     file_s.close();
 }
 
@@ -23,10 +24,10 @@ void leerDatosAvanzados(string file, Data& data, int inst){
         file_s.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
     }
     for(int i = 0; i < data.n; i++){
-        file_s >> data.temp_int[i];// = file_s.get();
+        file_s >> data.temp_int[i];
     }
     for(int i = 0; i < data.n; i++){
-        file_s >> data.temp_ext[i];// = file_s.get();
+        file_s >> data.temp_ext[i];
     }
 
     file_s.close();

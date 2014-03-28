@@ -16,7 +16,6 @@
 
 int main(int argc, char** argv){
     Data data;
-//	Matriz<double> A (3, 3);
     leerDatosBasicos(argv[1], data);
     for(int i = 0; i < data.c; i++){
         Matriz<double> A (data.n*data.m, data.n*data.m);    //Creo la matriz con ceros.
@@ -27,21 +26,5 @@ int main(int argc, char** argv){
         resolverSistema(A, b); //Resuelvo el sistema.
         escribirResultados(argv[2], b); //Escribo los resultados.
     }
-    //
-//	A[1][0] = 2;
-//	A[0][1] = 1;
-//	A[0][2] = 1;
-//	A[0][0] = 1;
-//	A[1][1] = 1;
-//	A[2][2] = 1;
-//	vector<double> b (3);
-//	b[0] = 1;
-//	b[1] = 1;
-//	b[2] = 1;
-//
-////	leerMatrix(A);
-//    A.mostrarMatriz();
-//	if(eliminacionGauss(A,b) == -1){return -1;};
-//	mostrarVector(b); cout << endl;
-	return 0;
+    return 0;
 }
