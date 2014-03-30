@@ -26,7 +26,7 @@ void gaussInf(vector< vector<T> >& A, vector<T>& b, int piv = 1){
 		for(int j = i+1; j < cant_filas; j++){
 			T m = A[j][i]/A[i][i];
 			// Si ya hay un cero, no hago nada.
-			if(!esCero(Aji)){
+			if(!esCero(m)){
                 for(int k = i; k < cant_columnas; k++){
                     // Aplico gauss en toda la fila. Con k = i se cancelan los valores.
                     A[j][k] = A[j][k] - m*A[i][k];
@@ -43,7 +43,7 @@ void gaussInf(vector< vector<T> >& A, vector<T>& b, int piv = 1){
 
 //Triangulacion de la parte superior.
 template<class T>
-void gaussSup(vector< vector<T> >& A, vector<T>& b){
+void gaussSup(vector< vector<T> >& A, vector<T>& b, int piv = 1){
 	// Voy iterando la matriz fila por fila.
 	int cant_filas = A.size();
 	int cant_columnas = A[0].size();
@@ -60,7 +60,7 @@ void gaussSup(vector< vector<T> >& A, vector<T>& b){
 		for(int j = i-1; j+1 > 0; j--){
             T m = A[j][i]/A[i][i];
             // Si ya hay un cero, no hago nada.
-            if(!esCero(Aji)){
+            if(!esCero(m)){
                 for(int k = i; k > cant_columnas; k--){
                     // Aplico gauss en toda la fila. Con k = i se cancelan los valores.
                     A[j][k] = A[j][k] - m*A[i][k];
