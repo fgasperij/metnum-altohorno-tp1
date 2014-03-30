@@ -1,5 +1,6 @@
 #include <vector>
 
+using namespace std;
 class hornoMatrix
 {
 	int deltaRadio;
@@ -8,16 +9,16 @@ class hornoMatrix
 	vector<int> externalTemperatures;
 
 	public:
-		hornoMatrix(int dRadio, int dAngle);
-		vector<vector<int>> generateMatrix(int total_radios, int total_angles);
+		hornoMatrix(int dRadio, int dAngle, vector<int> intTemperatures, vector<int> extTemperatures);
+		vector<vector<int> > generateMatrix(int total_radios, int total_angles);
 
 	private:
-		void fillRow (vecto<int> &row, int total_radios, int total_angles, int radio, int angle);
-		bool is_neighbour(radio, angle, j, k); 
-		int calculateNeighbourValue (radio, angle, j, k) ;
+		void fillRow (vector<int> &row, int total_radios, int total_angles, int radio, int angle);
+		bool is_neighbour(int radio, int angle, int j, int k); 
+		int calculateNeighbourValue (int radio, int angle, int j, int k) ;
 		int getLeft (); 
 		int getUpper (); 
 		int getRight (); 
 		int getBottom (); 
 		int getCenter (); 
-}
+};

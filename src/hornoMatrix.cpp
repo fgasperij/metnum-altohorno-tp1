@@ -1,4 +1,5 @@
-#include <hornoMatrix.h>
+#include "hornoMatrix.h"
+
 
 hornoMatrix::hornoMatrix(int dRadio, int dAngle, vector<int> intTemperatures, vector<int> extTemperatures)
 {
@@ -8,9 +9,9 @@ hornoMatrix::hornoMatrix(int dRadio, int dAngle, vector<int> intTemperatures, ve
 	deltaRadio = dRadio;
 }
 
-vector<vector<int>> hornoMatrix::generateMatrix(int total_radios, int total_angles) 
+vector<vector<int> > hornoMatrix::generateMatrix(int total_radios, int total_angles) 
 {
-	vector<vector<int>> matrix;
+	vector<vector<int> > matrix;
 	for(int j = 0; j < total_radios; j++) {
 		for (int k = 0; k < total_angles; k++) {
 			fillRow(matrix[j], total_radios, total_angles, j, k);
@@ -19,7 +20,7 @@ vector<vector<int>> hornoMatrix::generateMatrix(int total_radios, int total_angl
 
 }
 
-void hornoMatrix::fillRow (vecto<int> &row, int total_radios, int total_angles, int radio, int angle) 
+void hornoMatrix::fillRow (vector<int> &row, int total_radios, int total_angles, int radio, int angle) 
 {
 	double neighbour_value;
 	for(int j = 0; j < total_radios; j++) {
@@ -47,7 +48,7 @@ void hornoMatrix::fillRow (vecto<int> &row, int total_radios, int total_angles, 
 	} 
 }
 
-bool hornoMatrix::is_neighbour(radio, angle, j, k) 
+bool hornoMatrix::is_neighbour(int radio, int angle, int j, int k) 
 {
 	bool left = (radio-1 == j) && (angle == k);
 	bool center = (radio == j) && (angle == k);
@@ -58,7 +59,7 @@ bool hornoMatrix::is_neighbour(radio, angle, j, k)
 	return (left || center || right || upper || bottom);
 }
 
-int hornoMatrix::calculateNeighbourValue (radio, angle, j, k) 
+int hornoMatrix::calculateNeighbourValue (int radio, int angle, int j, int k)
 {
 	bool left = (radio-1 == j) && (angle == k);
 	bool center = (radio == j) && (angle == k);
@@ -80,25 +81,25 @@ int hornoMatrix::calculateNeighbourValue (radio, angle, j, k)
 
 int hornoMatrix::getLeft () 
 {
-	return (1-this.deltaRadio) / (this.deltaRadio * this.deltaRadio);
+	return (1-this->deltaRadio) / (this->deltaRadio * this->deltaRadio);
 }
 
 int hornoMatrix::getUpper () 
 {
-	return 1 / (this.deltaAngle * this.deltaAngle);
+	return 1 / (this->deltaAngle * this->deltaAngle);
 }
 
 int hornoMatrix::getRight () 
 {
-	return 1 / (this.deltaRadio * this.deltaRadio);
+	return 1 / (this->deltaRadio * this->deltaRadio);
 }
 
 int hornoMatrix::getBottom () 
 {
-	return 1 / (this.deltaAngle * this.deltaAngle);	
+	return 1 / (this->deltaAngle * this->deltaAngle);	
 }
 
 int hornoMatrix::getCenter () 
 {
-	return ( ( -2 / (this.deltaRadio * this.deltaRadio) ) + ( 1 / this.deltaRadio) - ( 2 / (this.deltaAngle * this.deltaAngle) ) );
+	return ( ( -2 / (this->deltaRadio * this->deltaRadio) ) + ( 1 / this->deltaRadio) - ( 2 / (this->deltaAngle * this->deltaAngle) ) );
 }

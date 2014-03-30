@@ -43,7 +43,7 @@ int main (int argc, char* argv[]) {
  		int instances = strToInt(arguments[5]);
 
  		int deltaRadios = (re - ri)/(radios-1);
- 		int deltaAngles = 360/n;	// @TODO what happens if it's not a round result?
+ 		//int deltaAngles = 360/n;	// @TODO what happens if it's not a round result?
 
  		// GET INSTANCES
  		for (int i = 0; i < instances; i++) {
@@ -52,9 +52,9 @@ int main (int argc, char* argv[]) {
  			vector<string> arguments = explode(delimiter, line);
 
 
- 			hornoMatrix matrixGenerator(deltaRadios, deltaAngles);
- 			vector<vector<int>> myMatrix;
- 			myMatrix = matrixGenerator.generateMatrix(radios, angles);
+ 			//hornoMatrix matrixGenerator(deltaRadios, deltaAngles);
+ 			vector<vector<int> > myMatrix;
+ 			//myMatrix = matrixGenerator.generateMatrix(radios, angles);
 
  		}
  			
