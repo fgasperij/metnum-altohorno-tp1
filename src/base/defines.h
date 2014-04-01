@@ -29,10 +29,11 @@ struct Data{
 #define LU 1
 
 #define PIV 1
+#define NO_LU 0
+#define LU 1
 
 #define pi 3.1415926
 #define CERO 1e-16
-//#define CERO 0
 
 
 #endif

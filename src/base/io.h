@@ -35,7 +35,7 @@ void leerDatosAvanzados(string file, Data& data, int inst){
 
 // Escribe los resultados en archivo de salida.
 template<class T>
-void escribirResultados(string file, vector<T>& b){
+void escribirVector(string file, vector<T>& b){
     ofstream file_s; file_s.open(file, fstream::app);
     int tamanio = b.size();
     for(int i = 0; i < tamanio; i++){
@@ -46,4 +46,33 @@ void escribirResultados(string file, vector<T>& b){
     file_s.close();
 }
 
+template<class T>
+void escribirMatriz(string file, Matriz<T>& A){
+    for(int i = 0; i < A.cantFilas(); i++){
+        escribirVector(file, A[i]);
+    }
+}
+
+template<class T>
+void leerVector(string file, vector<T>& b){
+    ifstream file_s; file_s.open(file);
+    int tamanio = b.size();
+    for(int i = 0; i < tamanio; i++){
+        file_s >> b[i];
+    }
+    file_s.close();
+}
+
+
+template<class T>
+void leerMatriz(string file, Matriz<T>& A){
+    ifstream file_s; file_s.open(file);
+    for(int i = 0; i < A.cantFilas(); i++){
+        for(int j = 0; j < A.cantColumnas(); j++){
+            file_s >> A[i][j];
+        }
+        file_s.get();
+    }
+    file_s.close();
+}
 #endif

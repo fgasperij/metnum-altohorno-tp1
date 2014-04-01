@@ -20,6 +20,7 @@ int main(int argc, char** argv){
     if(argc != 4){cerr << "Error: argumentos insuficientes";return -1;}
     Data data;
     leerDatosBasicos(argv[1], data);
+
     for(int i = 0; i < data.c; i++){
 
         Matriz<double> A (data.n*data.m);    //Creo la matriz con ceros.
@@ -31,14 +32,14 @@ int main(int argc, char** argv){
         if(atoi(argv[3]) == EG){
             gaussInf(A, b, 0);
             backSubst(A, b, res);
-            escribirResultados(argv[2], res); //Escribo los resultados.
+            escribirVector(argv[2], res); //Escribo los resultados.
         }
         else{
             gaussInf(A, b, 0, LU);
-            backSubst(A, b, res, LU);
+            forwSubst(A, b, res, LU);
             vector<double> res_lu = vector<double> (data.n*data.m);
-            forwSubst(A, res, res_lu);
-            escribirResultados(argv[2], res_lu); //Escribo los resultados.
+            backSubst(A, res, res_lu);
+            escribirVector(argv[2], res_lu); //Escribo los resultados.
         }
 
     }
