@@ -42,4 +42,7 @@ struct Data{
 
 #define PRECISION 6
 
+#define VERT 0
+#define HORIZ 1
+
 #endif

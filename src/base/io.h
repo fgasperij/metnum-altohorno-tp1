@@ -39,14 +39,17 @@ void leerDatosAvanzados(const char*  file, Data& data, int inst){
 
 // Escribe los resultados en archivo de salida.
 template<class T>
-void escribirVector(const char*  file, vector<T>& b){
+void escribirVector(const char*  file, vector<T>& b, int modo = VERT){
     ofstream file_s; file_s.open(file, fstream::app);
     setearPrecision(file_s, PRECISION);
     int tamanio = b.size();
     for(int i = 0; i < tamanio; i++){
         file_s << b[i];
-        if(i == tamanio-1){file_s << endl;}
-        else{file_s << " ";}
+        if(modo == VERT){
+            file_s << endl;
+        }
+        if(i == tamanio-1 && modo == HORIZ){file_s << endl;}
+        else if(modo == HORIZ){file_s << " ";}
     }
     file_s.close();
 }
@@ -54,7 +57,7 @@ void escribirVector(const char*  file, vector<T>& b){
 template<class T>
 void escribirMatriz(const char*  file, Matriz<T>& A){
     for(int i = 0; i < A.cantFilas(); i++){
-        escribirVector(file, A[i]);
+        escribirVector(file, A[i], HORIZ);
     }
 }
 
