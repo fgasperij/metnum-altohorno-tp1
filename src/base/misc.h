@@ -1,5 +1,5 @@
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef MISC_H
+#define MISC_H
 
 #include <vector>
 #include <cmath>
@@ -88,26 +88,33 @@ void cargarFila(Matriz<T>& A, int i, int j, T rad, T delta_R, T delta_Th, int an
 
 //Esta funcion se encarga de plantear el sistema
 template<class T>
-void plantearSistema(Matriz<T>& A, vector<T>& b, Data& data){
+void plantearSistema(Matriz<T>& A, vector<T>& b, Data& data, int cant = TODO){
     //delta_R+=delta_Th;
     int tam_b = b.size();
     int tam_A = A.cantFilas();
     //Parte superior e inferior de A y b de la expresion Ax = b.
-    for(int i = 0; i < data.n; i++){
-        b[i] = data.temp_int[i];
-        A[i][i] = 1;
-        A[tam_A-i-1][tam_A-i-1] = 1;
-        b[tam_b-i-1] = data.temp_ext[i];
+    if(cant == TODO || cant == VECTOR_b){
+        for(int i = 0; i < data.n; i++){
+            b[i] = data.temp_int[i];
+            b[tam_b-i-1] = data.temp_ext[i];
+        }
     }
     // El resto, para cada radio y para cada angulo en ese radio
-    T rad = data.rad_ext - data.rad_int;
-    T delta_R = rad/(data.m-1);
-    T delta_Th = (2*pi)/data.n;
-    T rad_int =  data.rad_int;
+    if(cant == TODO || cant == MATRIZ_A){
+        T rad = data.rad_ext - data.rad_int;
+        T delta_R = rad/(data.m-1);
+        T delta_Th = (2*pi)/data.n;
+        T rad_int =  data.rad_int;
 
-    for(int i = 2; i < data.m; i++){
-        for(int j = 1; j < data.n+1; j++){
-            cargarFila(A, i, j, rad, delta_R, delta_Th, data.n, rad_int);
+        for(int i = 0; i < data.n; i++){
+            A[i][i] = 1;
+            A[tam_A-i-1][tam_A-i-1] = 1;
+        }
+
+        for(int i = 2; i < data.m; i++){
+            for(int j = 1; j < data.n+1; j++){
+                cargarFila(A, i, j, rad, delta_R, delta_Th, data.n, rad_int);
+            }
         }
     }
 }
@@ -138,7 +145,7 @@ void backSubst(Matriz<T>& A, vector<T>& b, vector<T>& res, int lu = NO_LU){
             A[i][i] = 1;
         }
     }
-    if(res.size() != (unsigned int) tamanio){cerr << "backSubst: Tamaño no coincidente"; return;}
+    if(res.size() != (unsigned int) tamanio){cerr << "backSubst: Tamaño no coincidente" << endl; return;}
     for(int i = tamanio-1; i+1 > 0; i--){
         T acum = 0;
         for(int j = tamanio-1; j > i ; j--){
@@ -165,7 +172,7 @@ void forwSubst(Matriz<T>& A, vector<T>& b, vector<T>& res, int lu = NO_LU){
             A[i][i] = 1;
         }
     }
-    if(res.size() != (unsigned int) tamanio){cerr << "forwSubst: Tamaño no coincidente"; return;}
+    if(res.size() != (unsigned int) tamanio){cerr << "forwSubst: Tamaño no coincidente" << endl; return;}
     for(int i = 0; i < tamanio; i++){
         T acum = 0;
         for(int j = 0; j < i ; j++){

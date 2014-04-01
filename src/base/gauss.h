@@ -19,7 +19,7 @@ void gaussInf(Matriz<T>& A, vector<T>& b, int piv = PIV, int lu = NO_LU){
             A.intercambiar(max_pos, i);
             swap(b[max_pos], b[i]);
 		}
-		if(esCero(A[i][i])){cerr << "Gauss: la matriz no se puede triangular";  return;}  // Error, la matriz no se puede triangular
+		if(esCero(A[i][i])){cerr << "Gauss: la matriz no se puede triangular" << endl;  return;}  // Error, la matriz no se puede triangular
 		//  Aplico gauss fila por fila a partir de la fila siguiente a la fila pivot.
 		for(int j = i+1; j < cant_filas; j++){
 			T m = A[j][i]/A[i][i];
@@ -54,7 +54,7 @@ void gaussSup(Matriz<T>& A, vector<T>& b, int piv = PIV, int lu = NO_LU){
             A.intercambiar(max_pos, i);
             swap(b[max_pos], b[i]);
 		}
-		if(esCero(A[i][i])){cerr << "Gauss: la matriz no se puede triangular"; return;}  // Error, la matriz no se puede triangular
+		if(esCero(A[i][i])){cerr << "Gauss: la matriz no se puede triangular" << endl; return;}  // Error, la matriz no se puede triangular
 		//  Aplico gauss fila por fila a partir de la fila siguiente a la fila pivot.
 		for(int j = i-1; j+1 > 0; j--){
             T m = A[j][i]/A[i][i];

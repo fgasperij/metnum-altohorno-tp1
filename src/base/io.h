@@ -3,13 +3,17 @@
 
 #include "defines.h"
 #include "fstream"
-#include "defines.h"
 #include <limits>
 
 //Funciones de entrada salida pare leer y escribir datos en archivos.
 
+void setearPrecision(ofstream& of, int prec){
+   of.setf(ios::fixed, ios::floatfield );
+   of.precision(prec);
+}
+
 //Lee los datos basios del archivo. La primer linea.
-void leerDatosBasicos(string file, Data& data){
+void leerDatosBasicos(const char* file, Data& data){
     ifstream file_s; file_s.open(file);
     file_s >> data.rad_int >> data.rad_ext >> data.n >> data.m >> data.isoterma >> data.c;
     data.temp_ext = vector<double> (data.n);
@@ -18,7 +22,7 @@ void leerDatosBasicos(string file, Data& data){
 }
 
 //Lee los 2n elementos de la linea inst.
-void leerDatosAvanzados(string file, Data& data, int inst){
+void leerDatosAvanzados(const char*  file, Data& data, int inst){
     ifstream file_s; file_s.open(file);
     for(int i=0; i < inst; ++i){
         file_s.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
@@ -35,8 +39,9 @@ void leerDatosAvanzados(string file, Data& data, int inst){
 
 // Escribe los resultados en archivo de salida.
 template<class T>
-void escribirVector(string file, vector<T>& b){
+void escribirVector(const char*  file, vector<T>& b){
     ofstream file_s; file_s.open(file, fstream::app);
+    setearPrecision(file_s, PRECISION);
     int tamanio = b.size();
     for(int i = 0; i < tamanio; i++){
         file_s << b[i];
@@ -47,14 +52,14 @@ void escribirVector(string file, vector<T>& b){
 }
 
 template<class T>
-void escribirMatriz(string file, Matriz<T>& A){
+void escribirMatriz(const char*  file, Matriz<T>& A){
     for(int i = 0; i < A.cantFilas(); i++){
         escribirVector(file, A[i]);
     }
 }
 
 template<class T>
-void leerVector(string file, vector<T>& b){
+void leerVector(const char*  file, vector<T>& b){
     ifstream file_s; file_s.open(file);
     int tamanio = b.size();
     for(int i = 0; i < tamanio; i++){
@@ -65,7 +70,7 @@ void leerVector(string file, vector<T>& b){
 
 
 template<class T>
-void leerMatriz(string file, Matriz<T>& A){
+void leerMatriz(const char*  file, Matriz<T>& A){
     ifstream file_s; file_s.open(file);
     for(int i = 0; i < A.cantFilas(); i++){
         for(int j = 0; j < A.cantColumnas(); j++){

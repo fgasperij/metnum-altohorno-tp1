@@ -29,11 +29,17 @@ struct Data{
 #define LU 1
 
 #define PIV 1
+#define NO_PIV 0
 #define NO_LU 0
 #define LU 1
 
 #define pi 3.1415926
 #define CERO 1e-16
 
+#define TODO 2
+#define VECTOR_b 1
+#define MATRIZ_A 0
+
+#define PRECISION 6
 
 #endif

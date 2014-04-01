@@ -3,6 +3,7 @@
 
 #include "defines.h"
 #include <vector>
+#include <list>
 
 template<class T>
 vector< vector<T> > crearMatrix(int cant_filas, int cant_columnas){
@@ -37,20 +38,20 @@ class Matriz{
 	public:
 		Matriz();
 		// Crea una matriz con cant_filas y cant_columnas y la llena con ceros.
-		Matriz(int tamanio){
+		Matriz(int tamanio, T val = 0){
             int cant_filas = tamanio; int cant_columnas = tamanio;
             vector< vector<T> > m = vector< vector<T> > (cant_filas);
             for(int i = 0; i < cant_filas; i++){
-                m[i] = vector<T> (cant_columnas, 0);
+                m[i] = vector<T> (cant_columnas, val);
             }
             matriz = m;
 			//matriz = crearMatrix(tamanio, tamanio);
 			posiciones = crearPosiciones(tamanio);
 		}
-		Matriz(int cant_filas, int cant_columnas){
+		Matriz(int cant_filas, int cant_columnas, T val = 0){
             vector< vector<T> > m = vector< vector<T> > (cant_filas);
             for(int i = 0; i < cant_filas; i++){
-                m[i] = vector<T> (cant_columnas, 0);
+                m[i] = vector<T> (cant_columnas, val);
             }
             matriz = m;
 			//matriz = crearMatrix(cant_filas, cant_columnas);
@@ -69,8 +70,8 @@ class Matriz{
 		}
 
 
-		int cantFilas(){return matriz.size();}
-		int cantColumnas(){return matriz[0].size();}
+		int cantFilas()const {return matriz.size();}
+		int cantColumnas()const {return matriz[0].size();}
 };
 
 #endif
