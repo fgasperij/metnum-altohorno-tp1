@@ -15,7 +15,7 @@ void setearPrecision(ofstream& of, int prec){
 //Lee los datos basios del archivo. La primer linea.
 void leerDatosBasicos(const char* file, Data& data){
     ifstream file_s; file_s.open(file);
-    file_s >> data.rad_int >> data.rad_ext >> data.n >> data.m >> data.isoterma >> data.c;
+    file_s >> data.rad_int >> data.rad_ext >> data.m >> data.n >> data.isoterma >> data.c;
     data.temp_ext = vector<double> (data.n);
     data.temp_int = vector<double> (data.n);
     file_s.close();

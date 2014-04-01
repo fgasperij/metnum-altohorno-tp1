@@ -15,8 +15,6 @@
 
 int main(int argc, char** argv){
     if(argc != 4){cerr << "Error: argumentos insuficientes" << endl;return -1;}
-    cout.unsetf ( ios::floatfield );
-    cout.precision(6);
     Data data;
     leerDatosBasicos(argv[1], data);
     Matriz<double> A (data.n*data.m);    //Creo la matriz con ceros.
