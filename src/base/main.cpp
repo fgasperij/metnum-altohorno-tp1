@@ -10,7 +10,6 @@
 #include "gauss.h"
 #include "defines.h"
 #include "display.h"
-#include <fstream>
 
 
 
