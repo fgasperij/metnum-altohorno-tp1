@@ -1,0 +1,9 @@
+\subsubsection{Demostración de la proposición}
+Proposición:
+
+Sea $A \in K^{n \times n}$ con $K$ $=$ $\mathbb{R}$ o $\mathbb{C}$ una matriz diagonal dominante e inversible entonces es posible aplicar eliminación gaussiana sin pivoteo.
+
+Demostración:
+
+Como A es diagonal dominante, se tiene que $|A_{ii}|$ $\geq$ $\sum_{j=1, i \neq j}^{n}$ $|A_{ij}|$ para todo $j$ $\neq$ $i$. Supongamos que no se puede realizar eliminación gaussiana sin pivoteo, o lo que es lo mismo, existe un $i$ tal que en un determinado paso de la eliminación gaussiana sucede que $A_{ii}$ $=$ $0$, pero entonces por lo visto anteriormente se tiene que $0$ $=$ $|A_{ii}|$ $\geq$ $|A_{ij}|$  $\geq$ $=$ $0$  $j$ $\neq$ $i$, por lo que $|A_{ij}|$ $=$ $0$ para todo $j$ de $1$ a $n$ y esto sucede si y solo si $A_{ij}$ $=$ $0$, es decir, la fila $i$ es nula y por lo tanto A no es inversible, lo que es un absurdo ya que A es inversible por hipótesis. El absurdo provino de suponer que no es posible utilizar eliminación gaussiana sin pivoteo sobre A, quedando demostrada la proposición.
+
