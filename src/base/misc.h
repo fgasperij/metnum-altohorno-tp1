@@ -18,7 +18,7 @@ int maxPos(Matriz<T>& A, int i, int tipo){
         int max_pos = i;
         for(int h = i+1; h < A.cantFilas(); h++){
             if (A[h][i] > max_val){
-                max_val = abs(A[i][h]);
+                max_val = abs(A[h][i]);
                 max_pos = h;
             }
         }
@@ -29,7 +29,7 @@ int maxPos(Matriz<T>& A, int i, int tipo){
         int max_pos = i;
         for(int h = i-1; h+1 > 0; h--){
             if (A[h][i] > max_val){
-                max_val = abs(A[i][h]);
+                max_val = abs(A[h][i]);
                 max_pos = h;
             }
         }
@@ -89,14 +89,14 @@ void cargarFila(Matriz<T>& A, int i, int j, T rad, T delta_R, T delta_Th, int an
 //Esta funcion se encarga de plantear el sistema
 template<class T>
 void plantearSistema(Matriz<T>& A, vector<T>& b, Data& data, int cant = TODO){
-    //delta_R+=delta_Th;
     int tam_b = b.size();
     int tam_A = A.cantFilas();
+    int tam_temp_ext = data.temp_ext.size();
     //Parte superior e inferior de A y b de la expresion Ax = b.
     if(cant == TODO || cant == VECTOR_b){
         for(int i = 0; i < data.n; i++){
             b[i] = data.temp_int[i];
-            b[tam_b-i-1] = data.temp_ext[i];
+            b[tam_b-i-1] = data.temp_ext[tam_temp_ext-i-1];
         }
     }
     // El resto, para cada radio y para cada angulo en ese radio
@@ -151,9 +151,7 @@ void backSubst(Matriz<T>& A, vector<T>& b, vector<T>& res, int lu = NO_LU){
         for(int j = tamanio-1; j > i ; j--){
             acum += res[j]*A[i][j];
         }
-        //cout << acum << " " << b[i] << " " << A[i][i] << endl;
         res[i] = (b[i] - acum)/A[i][i];
-        //cout << res[i] << endl;
     }
     if(lu == LU){
         for(int i = 0; i < tamanio; i++){
