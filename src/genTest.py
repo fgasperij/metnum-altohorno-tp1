@@ -6,15 +6,16 @@ from random import randint
 from random import seed
 
 # Parametro 1 = Archivo de salida
-# Parametro 2 (opcional) = Semilla, si no se proporciona ninguna, la semilla es "aleatoria", por lo que cada llamada al programa arrojará diferentes instancias
+# Parametro 2 = m
+#Parametro 3 = n
+# Parametro 4 (opcional) = Semilla, si no se proporciona ninguna, la semilla es "aleatoria", por lo que cada llamada al programa arrojará diferentes instancias
 def main(arg = argv):
-	if(len(arg) < 3):
+	if(len(arg) < 5):
 		seed()
 	else:
-		seed(arg[2])
+		seed( int(arg[4]) )
 
 	# start y end = comienzo y final del intervalo del random respectivamente
-	# Por el momento muchos parametros son random, pero más adelante va a estar bueno escalar el n y el m.
 	start_ri = 1
 	end_ri = 5
 	start_re = start_ri+1
@@ -27,8 +28,8 @@ def main(arg = argv):
 
 	ri = randint(start_ri, end_ri)
 	re = randint(start_re, end_re)
-	m = randint(start_m, end_m)
-	n = randint(start_n, end_m)
+	m = int(arg[2])
+	n = int(arg[3])
 
 
 	start_temp_int = 1500
