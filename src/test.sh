@@ -25,7 +25,7 @@ do
 	./base/tp tests/test$i.in tests/testGauss$i.out 0
 done
 
-#Corro los tests con Gauss
+#Corro los tests con LU
 for((i=1; i < $cantTests+1; i++))
 do
 	./base/tp tests/test$i.in tests/testLU$i.out 1
