@@ -56,6 +56,8 @@ def main(arg = argv):
 	f.write(  str(n) )
 	f.write(" ")
 	f.write(  str(iso) )
+	f.write(" ")
+	f.write( str(arg[4]) )
 	f.write("\n")
 
 	
