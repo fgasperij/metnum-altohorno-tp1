@@ -14,7 +14,7 @@ then
 fi
 
 #Compilo
-g++ -std=c++0x -o base/tp base/main.cpp
+g++ -O2 -o base/tp base/main.cpp
 
 #Borro resultados anteriores
 rm -f tests/*.out
