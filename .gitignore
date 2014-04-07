@@ -15,3 +15,5 @@
 
 .deps
 *.pyc
+*.kilepr
+
