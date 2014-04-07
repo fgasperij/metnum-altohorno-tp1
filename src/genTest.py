@@ -19,8 +19,8 @@ def main(arg = argv):
 	# start y end = comienzo y final del intervalo del random respectivamente
 	start_ri = 1
 	end_ri = 5
-	start_re = start_ri+1
-	end_re = start_re+2*start_ri
+	
+
 	start_m = 10
 	end_m = 40
 	start_n = start_m
@@ -28,6 +28,8 @@ def main(arg = argv):
 
 
 	ri = randint(start_ri, end_ri)
+	start_re = ri+1
+	end_re = start_re+2*start_ri
 	re = randint(start_re, end_re)
 	m = int(arg[2])
 	n = int(arg[3])
