@@ -1,7 +1,11 @@
 \BOOKMARK [1][-]{section.1}{Introducci\363n Te\363rica}{}
 \BOOKMARK [1][-]{section.2}{Desarrollo}{}
+\BOOKMARK [2][-]{subsection.2.1}{Algoritmos}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{Test de comparaci\363n Gauss vs LU}{section.2}
 \BOOKMARK [1][-]{section.3}{Resultados}{}
 \BOOKMARK [1][-]{section.4}{Discusi\363n}{}
+\BOOKMARK [2][-]{subsection.4.1}{An\341lisis de comparaci\363n Gauss contra LU}{section.4}
 \BOOKMARK [1][-]{section.5}{Conclusiones}{}
 \BOOKMARK [1][-]{section.6}{Ap\351ndices}{}
+\BOOKMARK [2][-]{subsubsection.6.0.1}{Demostraci\363n de la proposici\363n}{section.6}
 \BOOKMARK [1][-]{section.7}{Referencias}{}

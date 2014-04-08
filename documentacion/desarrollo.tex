@@ -9,15 +9,16 @@
 
 Decidimos pensar al problema como si un sistema lineal de ecuaciones o, 
 equivalentemente, buscar el vector x que cumpla $Ax=b$, siendo éstas las siguientes:
-\begin{compactitem}
-  \item Matriz A: es una matriz cuadrada con cantidad de filas y de columnas igual a $n \times m$ 
-  	está dividida en 3 partes según las filas.  Sean i,j tal que $1 \leq i,j \leq (n \times m)$. \\
+\begin{itemize}
+  \item Matriz A: es una matriz cuadrada con cantidad de filas y de columnas igual a $n \times (m+1)$ 
+  	está dividida en 3 partes según las filas.  Sean i,j tal que $1 \leq i,j \leq (n \times
+	(m+1))$. \\
   	\begin{compactitem}
-	  \item \textbf{Caso} $i \leq n$ \textbf{ó Caso} $(n \times m) - n < i$:
+	  \item \textbf{Caso} $i \leq n$ \textbf{ó Caso} $(n \times (m+1)) - n < i$:
 	    \[ A_{ij} = \left\{ \begin{array}{ll}
                1 & \mbox{si $i = j$};\\
 	       0 & \mbox{si $i \neq j$}.\end{array} \right. \] 
-          \item \textbf{Caso} $n < i \leq (n \times m) - n$:
+          \item \textbf{Caso} $n < i \leq (n \times (m+1)) - n$:
 	    \[ A_{ij} = \left\{ \begin{array}{ll}
                \frac{-2}{(\Delta r)^2} + \frac{1}{r \times \Delta r} - \frac{2}{r^2 \times (\Delta \theta)^2}& \mbox{si $i = j$};\\ \ \\
                \frac{1}{(\Delta r)^2} - \frac{1}{r \times (\Delta r)}                                        & \mbox{si $j = i-n$};\\ \ \\
@@ -26,12 +27,12 @@ equivalentemente, buscar el vector x que cumpla $Ax=b$, siendo éstas las siguie
                \frac{1}{r^2 \times (\Delta \theta)^2}                                                        & \mbox{si $j = i+1$};\\ \ \\
 	       0 & \mbox{en otro caso}.\end{array} \right. \] 
 	\end{compactitem}
- \item Vector x: es un vector con $n \times m$ incógnitas que representarían las temperaturas de los
+ \item Vector x: es un vector con $n \times (m+1)$ incógnitas que representarían las temperaturas de los
  puntos en nuestra pared. Para que sea más fácil el cálculo y que sea consistente con lo propuesto
  en la matriz A, están ordenados de forma \textit{alfabética} primero según el radio (r) y después según
  el ángulo ($\theta$). Es decir, $X_1$ representa a T(1,1), $X_n$ representa a T(1,n), $X_{n+1}$ a
  T(2,1), etc.
- \item Vector b: es un vector con $n \times m$ valores y representarían lo que sabemos sobre las
+ \item Vector b: es un vector con $n \times (m+1)$ valores y representarían lo que sabemos sobre las
  temperaturas. En el caso de los primeros n y últimos n valores, son las temperaturas internas y
  externas respectivamente. En los puntos intermedios entre ellos, todos los valores son 0. De esta
  forma, en las partes que son \item{submatrices inducidas} de A en las que hay una matriz
@@ -39,11 +40,12 @@ equivalentemente, buscar el vector x que cumpla $Ax=b$, siendo éstas las siguie
  respectivo $X_i$ con su temperatura fija. En los puntos de la \textit{submatriz inducida de A} en
  los que no hay una Matriz \textbf{Identidad}, están igualados a 0 para aplicar la ecuación con
  derivadas con los multiplicadores de las incógnitas debidamente indicados por cada fila.
-\end{compactitem}
+\end{itemize}
 
 Menos formalmente, sean $M_{i,j}, M_{i,i-n}, M_{i,i+n}, M_{i,i-1}$ y $ M_{i,i+1}$ los
 multiplicadores en las filas de A ``del medio'' respectivamente según los enunciamos.
 
+\begin{center}
 $
 \begin{pmatrix}
   $I$    & \cdots    & 0      & \cdots     &   0     &   \cdots  &     \  &   0       &   \cdots   \\
@@ -51,11 +53,12 @@ $
   \vdots & \vdots    & \      & \vdots     &   \     &   \vdots  &     \  &         \ &   \vdots   \\ 
   \vdots & M_{i,j-n} & \cdots &  M_{i,j-1} & M_{i,j} & M_{i,j+1} & \cdots & M_{i,j+n} & \cdots     \\
   \vdots & \vdots    & \      & \vdots     &   \     &   \vdots  &     \  &         \ &   \vdots   \\ \hline
-  \cdots & \cdots    & 0      & \cdots     &   0     &   \cdots  &     \  &  I        &   \cdots   \\
+  \cdots & \cdots    & 0      & \cdots     &   0     &   \cdots  &     \  &  $I$        &   \cdots   \\
   \cdots & \cdots    & 0      & \cdots     &   \     &   \cdots  &     \  &  \vdots        &   \ddots   \\ 
 
 \end{pmatrix}
 $
+\end{center}
 
 \bigskip
 

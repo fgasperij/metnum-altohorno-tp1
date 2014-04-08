@@ -1,2 +1,8 @@
 \subsection{Análisis de comparación Gauss contra LU}
-Como se puede apreciar en los gráficos \ref{gaussVsLU1}, \ref{gaussVsLU2} y \ref{gaussVsLU3}, al variar la cantidad de instancias el tiempo de cómputo de la factorización LU fue muy inferior al tiempo de la eliminación gaussiana, y esta diferencia se hace sumamente notoria a medida que la cantidad de vectores $b$ a calcular aumenta. En el gráfico \ref{gaussVsLU4} se puede observar como la diferencia es proporcional tanto a la cantidad de instancias como al tamaño de las matrices. Por otro lado en \ref{gaussVsLU5} se puede determinar que basta con modificar dos veces el vector $b$ para apreciar una ventaja efectiva sobre la eliminación gaussiana y que para el caso en que solo haya un sólo vector $b$, los tiempos de cómputo son prácticamente idénticos.
+Como se puede apreciar en los gráficos \ref{gaussVsLU1}, \ref{gaussVsLU2} y \ref{gaussVsLU3}, al
+variar la cantidad de instancias el tiempo de cómputo de la factorización LU fue muy inferior al
+tiempo de la eliminación gaussiana, y esta diferencia se hace sumamente notoria a medida que la
+cantidad de vectores $b$ a calcular aumenta. En el gráfico \ref{gaussVsLU4} se puede observar como
+la diferencia es proporcional tanto a la cantidad de instancias como al tamaño de las matrices. Por
+otro lado en \ref{gaussVsLU5} se puede determinar que basta con resolver el sistema de ecuaciones
+con sólo dos vectores $b$ distintos para ya apreciar una ventaja efectiva sobre la eliminación gaussiana y que para el caso en que solo haya un sólo vector $b$, los tiempos de cómputo son prácticamente idénticos.
