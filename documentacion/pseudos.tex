@@ -1,0 +1,124 @@
+\begin{algorithm}[H]
+\caption{LU(Matriz $A$)}
+\label{pseudo:gauss}
+%\renewcommand\thealgorithm{}
+\begin{algorithmic}
+\FOR{$i=1$ hasta $n$}
+	\FOR{$j=i+1$ hasta $n-1$}
+		\STATE $m = A_{ji}/A_{ii}$
+		\IF{ $m != 0$ }
+			\FOR{$k=i$ hasta $n$}
+				\STATE $A_{jk} = A_{jk} - m \cdot A_{ik}$
+			\ENDFOR
+			\STATE $b_{j} = b_{j} - m \cdot b_{i}$
+		\ENDIF
+	\ENDFOR
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{gauss(Matriz $A$, vector $b$)}
+\label{pseudo:lu}
+%\renewcommand\thealgorithm{}
+\begin{algorithmic}
+\FOR{$i=1$ hasta $n$}
+	\FOR{$j=i+1$ hasta $n-1$}
+		\STATE $m = A_{ji}/A_{ii}$
+		\IF{ $m != 0$ }
+			\FOR{$k=i$ hasta $n$}
+				\STATE $A_{jk} = A_{jk} - m \cdot A_{ik}$
+			\ENDFOR
+			\STATE $A_{ji} = m$
+		\ENDIF
+	\ENDFOR
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{forwSubst(Matriz $A$, vector $b$, vector $res$, bool $lu$)}
+\label{pseudo:forwSubst}
+%\renewcommand\thealgorithm{}
+\begin{algorithmic}
+\IF{$lu$}
+	\FOR{$i=1$ hasta $n$}
+		\STATE $auxVector$ = $A_{ii}$
+		\STATE $A_{ii}$ = $1$
+	\ENDFOR
+\ENDIF
+\FOR{$i=1$ hasta $n$}
+	\STATE $acum$ $=$ $0$
+	\FOR{$j=1$ hasta $j$ $<$ $i$}
+		\STATE $acum += res_{j} \cdot A_{ij}$
+	\ENDFOR
+	\STATE $res_{i} = (b_{i} - acum)/A_{ii}$
+\ENDFOR
+
+\IF{$lu$}
+	\FOR{$i=1$ hasta $n$}
+		\STATE $A_{ii}$ = $auxVector$
+	\ENDFOR
+\ENDIF
+
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{backSubst(Matriz $A$, vector $b$, vector $res$, bool $lu$)}
+\label{pseudo:backSubst}
+%\renewcommand\thealgorithm{}
+\begin{algorithmic}
+\IF{$lu$}
+	\FOR{$i=1$ hasta $n$}
+		\STATE $auxVector$ = $A_{ii}$
+		\STATE $A_{ii}$ = $1$
+	\ENDFOR
+\ENDIF
+\FOR{$i=n$ hasta $1$}
+	\STATE $acum$ $=$ $0$
+	\FOR{$j=n$ hasta $j$ $>$ $i$}
+		\STATE $acum += res_{j} \cdot A_{ij}$
+	\ENDFOR
+	\STATE $res_{i} = (b_{i} - acum)/A_{ii}$
+\ENDFOR
+
+\IF{$lu$}
+	\FOR{$i=1$ hasta $n$}
+		\STATE $A_{ii}$ = $auxVector$
+	\ENDFOR
+\ENDIF
+
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{resolverConGauss(Matriz $A$, vectores $bes$, vectores $reses$)}
+\label{pseudo:resGauss}
+%\renewcommand\thealgorithm{}
+\begin{algorithmic}
+\FOR{$i=1$ hasta $\#(bes)$}
+	\STATE gauss($A$, $bes_{i}$)
+	\STATE backSubst($A$, $bes_{i}$, $reses_{i}$, $false$)
+\ENDFOR
+
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{resolverConLU(Matriz $A$, vectores $bes$, vectores $reses$)}
+\label{pseudo:resLU}
+%\renewcommand\thealgorithm{}
+\begin{algorithmic}
+\STATE LU($A$)
+\FOR{$i=1$ hasta $\#(bes)$}
+	\STATE backSubst($A$, $bes_{i}$, $aux$, $true$)
+	\STATE forwSubst($A$, $aux$, $reses_{i}$, $true$)
+\ENDFOR
+
+
+\end{algorithmic}
+\end{algorithm}
+
+
+
