@@ -1,12 +1,12 @@
 \begin{algorithm}[H]
-\caption{LU(Matriz $A$)}
+\caption{gauss(Matriz $A$, vector $b$)}
 \label{pseudo:gauss}
 %\renewcommand\thealgorithm{}
 \begin{algorithmic}
 \FOR{$i=1$ hasta $n$}
-	\FOR{$j=i+1$ hasta $n-1$}
-		\STATE $m = A_{ji}/A_{ii}$
-		\IF{ $m != 0$ }
+	\FOR{$j=i+1$ hasta $n-1$}		
+		\IF{ $A_{ji} != 0$ }
+			\STATE $m = A_{ji}/A_{ii}$
 			\FOR{$k=i$ hasta $n$}
 				\STATE $A_{jk} = A_{jk} - m \cdot A_{ik}$
 			\ENDFOR
@@ -18,14 +18,14 @@
 \end{algorithm}
 
 \begin{algorithm}[H]
-\caption{gauss(Matriz $A$, vector $b$)}
+\caption{LU(Matriz $A$)}
 \label{pseudo:lu}
 %\renewcommand\thealgorithm{}
 \begin{algorithmic}
 \FOR{$i=1$ hasta $n$}
-	\FOR{$j=i+1$ hasta $n-1$}
-		\STATE $m = A_{ji}/A_{ii}$
-		\IF{ $m != 0$ }
+	\FOR{$j=i+1$ hasta $n-1$}		
+		\IF{ $A_{ji} != 0$ }
+			\STATE $m = A_{ji}/A_{ii}$
 			\FOR{$k=i$ hasta $n$}
 				\STATE $A_{jk} = A_{jk} - m \cdot A_{ik}$
 			\ENDFOR

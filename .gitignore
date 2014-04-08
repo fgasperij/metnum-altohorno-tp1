@@ -16,4 +16,5 @@
 .deps
 *.pyc
 *.kilepr
-
+*.tex~
+*.tex.backup

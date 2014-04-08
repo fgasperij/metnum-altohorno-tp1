@@ -22,23 +22,35 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n Te\IeC {\'o}rica}{3}{section.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Desarrollo}{3}{section.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Algoritmos}{4}{subsection.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Test de comparaci\IeC {\'o}n Gauss vs LU}{4}{subsection.2.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Resultados}{4}{section.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Resultados obtenidos usando matrices de 50 \IeC {\'a}ngulos y 50 radios.\relax }}{5}{figure.caption.2}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.1}{\ignorespaces gauss(Matriz $A$, vector $b$)\relax }}{4}{algorithm.2.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{gaussVsLU1}{{1}{5}{Resultados obtenidos usando matrices de 50 ángulos y 50 radios.\relax \relax }{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Resultados obtenidos usando matrices de 30 \IeC {\'a}ngulos y 30 radios.\relax }}{5}{figure.caption.3}}
-\newlabel{gaussVsLU2}{{2}{5}{Resultados obtenidos usando matrices de 30 ángulos y 30 radios.\relax \relax }{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Resultados obtenidos usando matrices de 10 \IeC {\'a}ngulos y 10 radios.\relax }}{6}{figure.caption.4}}
-\newlabel{gaussVsLU3}{{3}{6}{Resultados obtenidos usando matrices de 10 ángulos y 10 radios.\relax \relax }{figure.caption.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Diferencia entre el tiempo consumido por LU y Gauss de los gr\IeC {\'a}ficos anteriores. Uso de escala logar\IeC {\'\i }tmica.\relax }}{6}{figure.caption.5}}
-\newlabel{gaussVsLU4}{{4}{6}{Diferencia entre el tiempo consumido por LU y Gauss de los gráficos anteriores. Uso de escala logarítmica.\relax \relax }{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Tiempo consumido por Gauss y LU para instancias peque\IeC {\~n}as.\relax }}{7}{figure.caption.6}}
-\newlabel{gaussVsLU5}{{5}{7}{Tiempo consumido por Gauss y LU para instancias pequeñas.\relax \relax }{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Discusi\IeC {\'o}n}{7}{section.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}An\IeC {\'a}lisis de comparaci\IeC {\'o}n Gauss contra LU}{7}{subsection.4.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusiones}{7}{section.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Ap\IeC {\'e}ndices}{7}{section.6}}
+\newlabel{pseudo:gauss}{{2.1}{4}{gauss(Matriz $A$, vector $b$)\relax \relax }{algorithm.2.1}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.2}{\ignorespaces LU(Matriz $A$)\relax }}{4}{algorithm.2.2}}
+\newlabel{pseudo:lu}{{2.2}{4}{LU(Matriz $A$)\relax \relax }{algorithm.2.2}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.3}{\ignorespaces forwSubst(Matriz $A$, vector $b$, vector $res$, bool $lu$)\relax }}{5}{algorithm.2.3}}
+\newlabel{pseudo:forwSubst}{{2.3}{5}{forwSubst(Matriz $A$, vector $b$, vector $res$, bool $lu$)\relax \relax }{algorithm.2.3}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.4}{\ignorespaces backSubst(Matriz $A$, vector $b$, vector $res$, bool $lu$)\relax }}{5}{algorithm.2.4}}
+\newlabel{pseudo:backSubst}{{2.4}{5}{backSubst(Matriz $A$, vector $b$, vector $res$, bool $lu$)\relax \relax }{algorithm.2.4}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.5}{\ignorespaces resolverConGauss(Matriz $A$, vectores $bes$, vectores $reses$)\relax }}{5}{algorithm.2.5}}
+\newlabel{pseudo:resGauss}{{2.5}{5}{resolverConGauss(Matriz $A$, vectores $bes$, vectores $reses$)\relax \relax }{algorithm.2.5}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.6}{\ignorespaces resolverConLU(Matriz $A$, vectores $bes$, vectores $reses$)\relax }}{5}{algorithm.2.6}}
+\newlabel{pseudo:resLU}{{2.6}{5}{resolverConLU(Matriz $A$, vectores $bes$, vectores $reses$)\relax \relax }{algorithm.2.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Test de comparaci\IeC {\'o}n Gauss vs LU}{6}{subsection.2.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Resultados}{6}{section.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Resultados obtenidos usando matrices de 50 \IeC {\'a}ngulos y 50 radios.\relax }}{6}{figure.caption.2}}
+\newlabel{gaussVsLU1}{{1}{6}{Resultados obtenidos usando matrices de 50 ángulos y 50 radios.\relax \relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Resultados obtenidos usando matrices de 30 \IeC {\'a}ngulos y 30 radios.\relax }}{7}{figure.caption.3}}
+\newlabel{gaussVsLU2}{{2}{7}{Resultados obtenidos usando matrices de 30 ángulos y 30 radios.\relax \relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Resultados obtenidos usando matrices de 10 \IeC {\'a}ngulos y 10 radios.\relax }}{7}{figure.caption.4}}
+\newlabel{gaussVsLU3}{{3}{7}{Resultados obtenidos usando matrices de 10 ángulos y 10 radios.\relax \relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Diferencia entre el tiempo consumido por LU y Gauss de los gr\IeC {\'a}ficos anteriores. Uso de escala logar\IeC {\'\i }tmica.\relax }}{8}{figure.caption.5}}
+\newlabel{gaussVsLU4}{{4}{8}{Diferencia entre el tiempo consumido por LU y Gauss de los gráficos anteriores. Uso de escala logarítmica.\relax \relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Tiempo consumido por Gauss y LU para instancias peque\IeC {\~n}as.\relax }}{8}{figure.caption.6}}
+\newlabel{gaussVsLU5}{{5}{8}{Tiempo consumido por Gauss y LU para instancias pequeñas.\relax \relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Discusi\IeC {\'o}n}{8}{section.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}An\IeC {\'a}lisis de comparaci\IeC {\'o}n Gauss contra LU}{8}{subsection.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusiones}{9}{section.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Ap\IeC {\'e}ndices}{9}{section.6}}
 \@input{demo.aux}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Referencias}{9}{section.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Referencias}{11}{section.7}}
 \bibstyle{plain}
