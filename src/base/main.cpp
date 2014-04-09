@@ -13,6 +13,7 @@
 #include "time.h"
 #include "isoterma.h"
 
+using namespace std;
 
 int main(int argc, char** argv){
     if(argc != 4){cerr << "Error: argumentos insuficientes" << endl;return -1;}
@@ -24,23 +25,30 @@ int main(int argc, char** argv){
     for(int i = 0; i < data.c; i++){
 
         vector<double> res (data.n*data.m);
+        cout << res.size();
         leerDatosAvanzados(argv[1], data, i+1);  //Leo datos avanzados.
+        cout << res.size();
         plantearSistema(A, b, data, VECTOR_b);    // Planteo el sistema, es decir actualizo b.
+        cout << res.size();
         if(atoi(argv[3]) == EG){
             if(i != 0){
                 A = Matriz<double> (data.n*data.m);
                 b = vector<double> (data.n*data.m, 0);
             }
+            cout << res.size();
             plantearSistema(A, b, data);
+            cout << res.size();
             gaussInf(A, b, NO_PIV);
+            cout << res.size();
             backSubst(A, b, res);
+            cout << res.size();
 
             // calculo de la isoterma
-            double rad = data.rad_ext - data.rad_int;
-            double delta_R = rad/(data.m-1);
-            double delta_Th = (2*pi)/data.n;
-            vector<double> isotermas (data.n);
-            //isotermas = calcularIsotermas(res, data.m, data.n, data.isoterma, data.rad_int, delta_R, 0);
+            // double rad = data.rad_ext - data.rad_int;
+            // double delta_R = rad/(data.m-1);
+            // double delta_Th = (2*pi)/data.n;
+            // vector<double> isotermas (data.n);
+            // isotermas = calcularIsotermas(res, data.m, data.n, data.isoterma, data.rad_int, delta_R, 0);
             
             // escribo ISOTERMAS
             //escribirVector(argv[2], isotermas);
