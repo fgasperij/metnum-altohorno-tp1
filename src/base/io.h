@@ -39,7 +39,7 @@ void leerDatosAvanzados(const char*  file, Data& data, int inst){
 
 // Escribe los resultados en archivo de salida.
 template<class T>
-void escribirVector(const char*  file, vector<T>& b, int modo = VERT){
+void escribirVector(const char*  file, const vector<T>& b, int modo = VERT){
     ofstream file_s; file_s.open(file, fstream::app);
     setearPrecision(file_s, PRECISION);
     int tamanio = b.size();
