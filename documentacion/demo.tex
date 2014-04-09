@@ -3,7 +3,40 @@ Proposición:
 
 Sea $A \in K^{n \times n}$ con $K$ $=$ $\mathbb{R}$ o $\mathbb{C}$ una matriz diagonal dominante e inversible entonces es posible aplicar eliminación gaussiana sin pivoteo.
 
+Notación útil: 
+
+$A(i|j)$ := Es la submatriz de $A$ que se obtiene de elimar las filas de $1$ a $i$ y las columnas de $1$ a $j$.
+
+$A^{(k)}$ := Es la matriz obtenida luego de relizar $k$ pasos de eliminación gaussiana sobre las filas de $A$.
+
 Demostración:
 
-Como A es diagonal dominante, se tiene que $|A_{ii}|$ $\geq$ $\sum_{j=1, i \neq j}^{n}$ $|A_{ij}|$ para todo $j$ $\neq$ $i$. Supongamos que no se puede realizar eliminación gaussiana sin pivoteo, o lo que es lo mismo, existe un $i$ tal que en un determinado paso de la eliminación gaussiana sucede que $A_{ii}$ $=$ $0$, pero entonces por lo visto anteriormente se tiene que $0$ $=$ $|A_{ii}|$ $\geq$ $|A_{ij}|$  $\geq$ $0$ para todo $j$ $\neq$ $i$, por lo que $|A_{ij}|$ $=$ $0$ para todo $j$ de $1$ a $n$ y esto sucede si y solo si $A_{ij}$ $=$ $0$, es decir, la fila $i$ es nula y por lo tanto A no es inversible, lo que es un absurdo ya que A es inversible por hipótesis. El absurdo provino de suponer que no es posible utilizar eliminación gaussiana sin pivoteo sobre A, quedando demostrada la proposición.
+Como A es diagonal dominante, se tiene que $|A_{ii}|$ $\geq$ $\sum_{j=1, i \neq j}^{n}$ $|A_{ij}|$ para todo $j$ $\neq$ $i$, por lo tanto debe suceder que $A_{11}$ $\neq$ $0$, si así no fuera, se tiene que $0$ $=$ $|A_{11}|$ $\geq$ $|A_{1j}|$  $\geq$ $0$ para todo $j$ $\neq$ $2$ a $n$, por lo que $|A_{1j}|$ $=$ $0$, y esto sucede si y solo si $A_{ij}$ $=$ $0$, es decir, la columna $1$ es nula y por lo tanto A no es inversible, pero A es inversible y en consecuencia $A_{11}$ $\neq$ $0$.
+Teniendo en cuenta que $A_{11}$ $\neq$ $0$, veamos ahora que al realizar eliminación gaussiana sobre $A$, la matriz $A(1|1)^{(1)}$ resulta ser diagonal dominante:
+Hay que probar que para todo $j$ vale:
+\[
+\sum_{i \geq 2, i \neq j}^{n}|A_{ij}^{(1)}| \leq  |A_{jj}^{(1)}| 
+\]
+Tenemos que:
+\[
+\sum_{i \geq 2, i \neq j}^{n} |A_{ij}^{(1)}| =  \sum_{i \geq 2, i \neq j}^{n} |A_{ij} - \frac{A_{1j}A_{i1}}{A_{11}}| \leq 
+\sum_{i \geq 2, i \neq j}^{n} |A_{ij}| + |\frac{A_{1j}A_{i1}}{A_{11}}| =
+\sum_{i \geq 1, i \neq j}^{n} |A_{ij}| - |A_{1j}| + |\frac{A_{1j}}{A_{11}}|(\sum_{i \geq 2}^{n} |A_{i1}| - |A_{j1}|)
+\]
+y como A es diagonal dominante:
+\[
+\sum_{i \geq 1, i \neq j}^{n} |A_{ij}| \leq |A_{jj}| \text{\qquad y \qquad} \sum_{i \geq 2}^{n} |A_{i1}| \leq |A_{11}
+\]
+Finalmente:
+\[
+\sum_{i \geq 1, i \neq j}^{n} |A_{ij}| - |A_{1j}| + |\frac{A_{1j}}{A_{11}}|(\sum_{i \geq 2}^{n} |A_{i1}| - |A_{j1}|) \leq
+|A_{jj}| - |A_{1j}| + |\frac{A_{1j}}{A_{11}}|(|A_{11} - |A_{j1}|) =
+\]
+
+\[
+|A_{jj}| - |\frac{A_{1j}A_{j1}}{A_{11}}| \leq
+|A_{jj} - \frac{A_{1j}A_{j1}}{A_{11}}| = |A_{jj}^{(1)}|
+\]
+
+Por lo tanto $A(1|1)^{(1)}$ es diagonal dominante, y volviendo a utilizar la demostración anterior en cada paso de la eliminación gaussina se concluye que A es diagonalizable sin pivoteo.
 
