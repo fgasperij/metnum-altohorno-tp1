@@ -11,6 +11,7 @@
 #include "defines.h"
 #include "display.h"
 #include "time.h"
+#include "isoterma.h"
 
 
 int main(int argc, char** argv){
@@ -33,9 +34,20 @@ int main(int argc, char** argv){
             plantearSistema(A, b, data);
             gaussInf(A, b, NO_PIV);
             backSubst(A, b, res);
-            escribirVector(argv[2], res); //Escribo los resultados.
-        }
-        else{
+
+            // calculo de la isoterma
+            double rad = data.rad_ext - data.rad_int;
+            double delta_R = rad/(data.m-1);
+            double delta_Th = (2*pi)/data.n;
+            vector<double> isotermas (data.n);
+            //isotermas = calcularIsotermas(res, data.m, data.n, data.isoterma, data.rad_int, delta_R, 0);
+            
+            // escribo ISOTERMAS
+            //escribirVector(argv[2], isotermas);
+
+            // escribo X
+            escribirVector(argv[2], res);
+        } else{
             if(i == 0){
                 plantearSistema(A, b, data, MATRIZ_A); gaussInf(A, b, NO_PIV, LU);
             }
