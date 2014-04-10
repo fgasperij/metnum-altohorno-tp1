@@ -39,6 +39,10 @@ for f in $files
 do
 	echo "Running $f"
 	./base/tp "$f" "testsInforme/$nombre_test/test$i.out" 0 $iso_o_temps
+	#CUIDADO: en el test de tiempo vs granularidad, todo se guarda en el mismo archivo, 
+	# así que pasarle el nombre del archivo es ignorado. Para medir el tiempo se hardcodea
+	# en el main.cpp. No está automatizado. Para correrlo, hardcodear el main.cpp para medir y 
+	# correr este .sh. (también se ignora el iso o temps)
 	echo "OK"
 	i=$((i + 1))
 done

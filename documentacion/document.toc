@@ -2,11 +2,18 @@
 \contentsline {section}{\numberline {1}Introducci\IeC {\'o}n Te\IeC {\'o}rica}{3}{section.1}
 \contentsline {section}{\numberline {2}Desarrollo}{3}{section.2}
 \contentsline {subsection}{\numberline {2.1}Algoritmos}{4}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Test de comparaci\IeC {\'o}n Gauss vs LU}{6}{subsection.2.2}
-\contentsline {section}{\numberline {3}Resultados}{6}{section.3}
-\contentsline {section}{\numberline {4}Discusi\IeC {\'o}n}{8}{section.4}
-\contentsline {subsection}{\numberline {4.1}An\IeC {\'a}lisis de comparaci\IeC {\'o}n Gauss contra LU}{8}{subsection.4.1}
-\contentsline {section}{\numberline {5}Conclusiones}{9}{section.5}
-\contentsline {section}{\numberline {6}Ap\IeC {\'e}ndices}{9}{section.6}
-\contentsline {subsubsection}{\numberline {6.0.1}Demostraci\IeC {\'o}n de la proposici\IeC {\'o}n}{10}{subsubsection.6.0.1}
-\contentsline {section}{\numberline {7}Referencias}{11}{section.7}
+\contentsline {subsection}{\numberline {2.2}Tests}{6}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Test de isoterma en funci\IeC {\'o}n de la granularidad de la discretizaci\IeC {\'o}n}{6}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Test de comparaci\IeC {\'o}n Gauss vs LU}{6}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Test de isoterma en funci\IeC {\'o}n de las condiciones de borde}{6}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Test de tiempo en funci\IeC {\'o}n de la granularidad de la discretizaci\IeC {\'o}n}{6}{subsubsection.2.2.4}
+\contentsline {section}{\numberline {3}Resultados}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Gauss vs LU}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Granularidad vs Tiempo}{9}{subsection.3.2}
+\contentsline {section}{\numberline {4}Discusi\IeC {\'o}n}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}An\IeC {\'a}lisis de comparaci\IeC {\'o}n Gauss contra LU}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}An\IeC {\'a}lisis de comparaci\IeC {\'o}n de granularidad y tiempo}{10}{subsection.4.2}
+\contentsline {section}{\numberline {5}Conclusiones}{10}{section.5}
+\contentsline {section}{\numberline {6}Ap\IeC {\'e}ndices}{10}{section.6}
+\contentsline {subsubsection}{\numberline {6.0.1}Demostraci\IeC {\'o}n de la proposici\IeC {\'o}n}{11}{subsubsection.6.0.1}
+\contentsline {section}{\numberline {7}Referencias}{12}{section.7}

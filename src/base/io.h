@@ -4,6 +4,8 @@
 #include "defines.h"
 #include "fstream"
 #include <limits>
+#include <string>
+#include <sstream>
 
 //Funciones de entrada salida pare leer y escribir datos en archivos.
 
@@ -81,6 +83,13 @@ void leerMatriz(const char*  file, Matriz<T>& A){
         }
         file_s.get();
     }
+    file_s.close();
+}
+
+void escribirTiempo(const char*  file, string st){
+    ofstream file_s; file_s.open(file, fstream::app);
+    file_s << st;
+    file_s << endl;
     file_s.close();
 }
 #endif
