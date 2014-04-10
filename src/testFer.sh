@@ -47,6 +47,8 @@ do
 		./base/tp "$f" "testsInforme/$nombre_test/testTemp$i.out" 0 $iso_o_temps
 	fi
 
+	./base/tp "$f" "testsInforme/$nombre_test/test$i.out" 0 $iso_o_temps
+
 	#CUIDADO: en el test de tiempo vs granularidad, todo se guarda en el mismo archivo, 
 	# así que pasarle el nombre del archivo es ignorado. Para medir el tiempo se hardcodea
 	# en el main.cpp. No está automatizado. Para correrlo, hardcodear el main.cpp para medir y 
