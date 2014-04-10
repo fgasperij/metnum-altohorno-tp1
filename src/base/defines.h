@@ -28,6 +28,9 @@ struct Data{
 #define EG 0
 #define LU 1
 
+#define ISO 0
+#define TEMPS 1
+
 #define PIV 1
 #define NO_PIV 0
 #define NO_LU 0

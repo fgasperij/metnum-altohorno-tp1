@@ -16,7 +16,7 @@
 using namespace std;
 
 int main(int argc, char** argv){
-    if(argc != 4){cerr << "Error: argumentos insuficientes" << endl;return -1;}
+    if(argc != 5){cerr << "Error: argumentos insuficientes" << endl;return -1;}
     Data data;
     leerDatosBasicos(argv[1], data);
     Matriz<double> A (data.n*data.m);    //Creo la matriz con ceros.
@@ -24,45 +24,54 @@ int main(int argc, char** argv){
 
     for(int i = 0; i < data.c; i++){
 
-        vector<double> res (data.n*data.m);
-        cout << res.size();
+        vector<double> temps (data.n*data.m);
+	vector<double> res_final (data.n*data.m);
+        cout << temps.size();
         leerDatosAvanzados(argv[1], data, i+1);  //Leo datos avanzados.
-        cout << res.size();
+        cout << temps.size();
         plantearSistema(A, b, data, VECTOR_b);    // Planteo el sistema, es decir actualizo b.
-        cout << res.size();
+        cout << temps.size();
         if(atoi(argv[3]) == EG){
+	//Gauss:
             if(i != 0){
                 A = Matriz<double> (data.n*data.m);
                 b = vector<double> (data.n*data.m, 0);
             }
-            cout << res.size();
+            cout << temps.size();
             plantearSistema(A, b, data);
-            cout << res.size();
+            cout << temps.size();
             gaussInf(A, b, NO_PIV);
-            cout << res.size();
-            backSubst(A, b, res);
-            cout << res.size();
+            cout << temps.size();
+            backSubst(A, b, temps);
+            cout << temps.size();
 
-            // calculo de la isoterma
-            // double rad = data.rad_ext - data.rad_int;
-            // double delta_R = rad/(data.m-1);
-            // double delta_Th = (2*pi)/data.n;
-            // vector<double> isotermas (data.n);
-            // isotermas = calcularIsotermas(res, data.m, data.n, data.isoterma, data.rad_int, delta_R, 0);
-            
-            // escribo ISOTERMAS
-            //escribirVector(argv[2], isotermas);
+	    res_final = temps;
 
-            // escribo X
-            escribirVector(argv[2], res);
         } else{
+	//LU:
             if(i == 0){
                 plantearSistema(A, b, data, MATRIZ_A); gaussInf(A, b, NO_PIV, LU);
             }
-            forwSubst(A, b, res, LU);
-            vector<double> res_lu = vector<double> (data.n*data.m);
-            backSubst(A, res, res_lu);
-            escribirVector(argv[2], res_lu); //Escribo los resultados.
+            forwSubst(A, b, temps, LU);
+            vector<double> temps_lu = vector<double> (data.n*data.m);
+            backSubst(A, temps, temps_lu);
+            res_final = temps_lu;
+        }
+	if(atoi(argv[4]) == ISO){
+	//Escribir Isoterma 
+            // calculo de la isoterma
+            double rad = data.rad_ext - data.rad_int;
+            double delta_R = rad/(data.m-1);
+            double delta_Th = (2*pi)/data.n;
+            vector<double> isotermas (data.n);
+            isotermas = calcularIsotermas(temps, data.m, data.n, data.isoterma, data.rad_int, delta_R, 0);
+            
+            // escribo ISOTERMAS
+            escribirVector(argv[2], isotermas);
+	}
+	else{
+	//Escribir vector de Temps
+	escribirVector(argv[2], res_final);
         }
 
     }
