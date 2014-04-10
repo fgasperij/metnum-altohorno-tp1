@@ -33,13 +33,12 @@ rm -f "testsInforme/$nombre_test/*.out"
 #Corro los tests con Gauss
 
 files=./testsInforme/$nombre_test/*.in
-mkdir -p ./testsInforme/$nombre_test
 
 i=1
 for f in $files
 do
 	echo "Running $f"
-	./base/tp "$f" "testsInforme/$nombre_test/test$i.out" 0 $iso_o_temps
+	./base/tp "$f" "testsInforme/$nombre_test/test$i.out" 1 $iso_o_temps
 	echo "OK"
 	i=$((i + 1))
 done
