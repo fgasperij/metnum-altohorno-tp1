@@ -39,6 +39,7 @@ for f in $files
 do
 	echo "$i"
 	echo "Running $f"
+
 	if [ $iso_o_temps -eq 0 ]
 	then
 		./base/tp "$f" "testsInforme/$nombre_test/testIso$i.out" 0 $iso_o_temps
