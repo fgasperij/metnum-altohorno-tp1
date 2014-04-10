@@ -17,16 +17,16 @@ fi
 g++ -O2 -o base/tp base/main.cpp
 
 #Borro resultados anteriores
-rm -f "tests/$nombre_test/*.out"
+rm -f "testsInforme/$nombre_test/*.out"
 
 #Corro los tests con Gauss
 
-files=./tests/$nombre_test/*
+files=./testsInforme/$nombre_test/*.in
 i=1
 for f in $files
 do
-	echo "Running $f..."
-	./base/tp "$f" "tests/$nombre_test/test$i.out" 0
+	echo "Running $f"
+	./base/tp "$f" "testsInforme/$nombre_test/test$i.out" 0
 	echo "OK"
 	i=$((i + 1))
 done
