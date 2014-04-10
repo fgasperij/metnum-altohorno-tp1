@@ -28,7 +28,7 @@ fi
 g++ -O2 -o base/tp base/main.cpp
 
 #Borro resultados anteriores
-rm -f "testsInforme/$nombre_test/*.out"
+rm -f testsInforme/$nombre_test/*.out
 
 #Corro los tests con Gauss
 
@@ -38,7 +38,7 @@ i=1
 for f in $files
 do
 	echo "Running $f"
-	./base/tp "$f" "testsInforme/$nombre_test/test$i.out" 1 $iso_o_temps
+	./base/tp "$f" "testsInforme/$nombre_test/test$i.out" 0 $iso_o_temps
 	echo "OK"
 	i=$((i + 1))
 done

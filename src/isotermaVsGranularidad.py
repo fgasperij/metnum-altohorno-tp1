@@ -14,7 +14,7 @@ def main(arg = argv):
 	temp_ext = 1000	
 
 	for i in range(5,10):
-		f = open('./tests/isotermaVsGranularidad/test'+str(i)+'.in', 'w')
+		f = open('./testsInforme/isotermaVsGranularidad/test'+str(i)+'.in', 'w')
 		# Escribo datos basicos
 		f.write(  str(ri) )
 		f.write(" ")

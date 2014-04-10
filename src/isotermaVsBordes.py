@@ -15,7 +15,7 @@ def main(arg = argv):
 
 	i = 1
 
-	f = open('./tests/isotermaVsBordes/test'+str(i)+'.in', 'w')
+	f = open('./testsInforme/isotermaVsBordes/test'+str(i)+'.in', 'w')
 	# Escribo datos basicos
 	f.write(  str(ri) )
 	f.write(" ")

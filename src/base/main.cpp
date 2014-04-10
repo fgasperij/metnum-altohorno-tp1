@@ -26,24 +26,17 @@ int main(int argc, char** argv){
 
         vector<double> temps (data.n*data.m);
 	vector<double> res_final (data.n*data.m);
-        cout << temps.size();
         leerDatosAvanzados(argv[1], data, i+1);  //Leo datos avanzados.
-        cout << temps.size();
         plantearSistema(A, b, data, VECTOR_b);    // Planteo el sistema, es decir actualizo b.
-        cout << temps.size();
         if(atoi(argv[3]) == EG){
 	//Gauss:
             if(i != 0){
                 A = Matriz<double> (data.n*data.m);
                 b = vector<double> (data.n*data.m, 0);
             }
-            cout << temps.size();
             plantearSistema(A, b, data);
-            cout << temps.size();
             gaussInf(A, b, NO_PIV);
-            cout << temps.size();
             backSubst(A, b, temps);
-            cout << temps.size();
 
 	    res_final = temps;
 
@@ -64,7 +57,7 @@ int main(int argc, char** argv){
             double delta_R = rad/(data.m-1);
             double delta_Th = (2*pi)/data.n;
             vector<double> isotermas (data.n);
-            isotermas = calcularIsotermas(temps, data.m, data.n, data.isoterma, data.rad_int, delta_R, 0);
+            isotermas = calcularIsotermas(res_final, data.m, data.n, data.isoterma, data.rad_int, delta_R, 0);
             
             // escribo ISOTERMAS
             escribirVector(argv[2], isotermas);
@@ -75,7 +68,5 @@ int main(int argc, char** argv){
         }
 
     }
-
-
 	return 0;
 }
