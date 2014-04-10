@@ -1,0 +1,6 @@
+\subsection{Test de tiempo en función de la granularidad de la discretización}
+La siguiente experimentación tiene por objetivo analizar cómo y cuánto influye la granularidad de la discretización en el tiempo de ejecución de nuestros algoritmos. Sólo utilizamos el método de Gauss-Jordan ya que no nos interesa comparar Gauss-Jordan con LU, hay otro test específico para eso.
+Para aislar la componente granularidad decidimos tomar $r_i$, $r_e$, $T_i(\theta_j)$, $T_e(\theta_j)$ e $iso$ constantes. Lo único que varía entre las instancias del test es la cantidad de ángulos y radios en la que discretizamos el horno. Tomamos cantidades de ángulos y radios siempre iguales porque sólo nos interesa la granularidad como cantidad de puntos. Es decir, que la cantidad de puntos en nuestra discretización va a ser:
+\begin{equation}
+ puntos = m^2 = n^2
+\end{equation}

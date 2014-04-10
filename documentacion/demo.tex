@@ -38,5 +38,4 @@ Finalmente:
 |A_{jj} - \frac{A_{1j}A_{j1}}{A_{11}}| = |A_{jj}^{(1)}|
 \]
 
-Por lo tanto $A(1|1)^{(1)}$ es diagonal dominante, y volviendo a utilizar la demostración anterior en cada paso de la eliminación gaussina se concluye que A es posible aplicar eliminación gaussiana sin pivoteo.
-
+Por lo tanto $A(1|1)^{(1)}$ es diagonal dominante e inversible porque la matriz original lo era (si no lo fuera se podría triangular obteniendo al menos una fila con ceros, pero como $A$ ya tiene ceros en la primer columna, existiendo una triangulación de $A$ con una fila nula, lo que es un absurdo pues $A$ ya era inversible), por lo que aplicando la demostración anterior para $A(1|1)^{(1)}$, se tiene que también es posible realizar el paso $2$ de gauss sin pivoteo. Aplicando la demostración anterior recursivamente se obtiene que las matrices $A(2|2)^{(2)}$, $\ldots$, $A(k|k)^{(k)}$ son todas diagonal dominantes e inversible, donde $k$ es el último paso de la eliminación gaussiana, demostrando lo pedido.
