@@ -3,16 +3,16 @@
 \label{pseudo:gauss}
 %\renewcommand\thealgorithm{}
 \begin{algorithmic}
-\FOR{$i=1$ hasta $n$}
-	\FOR{$j=i+1$ hasta $n-1$}		
-		\IF{ $A_{ji} != 0$ }
+\FOR{$i=1$ hasta $n-1$}
+	\IF{ $A_{ii} != 0$ }
+		\FOR{$j=i+1$ hasta $n$}		
 			\STATE $m = A_{ji}/A_{ii}$
 			\FOR{$k=i$ hasta $n$}
 				\STATE $A_{jk} = A_{jk} - m \cdot A_{ik}$
 			\ENDFOR
 			\STATE $b_{j} = b_{j} - m \cdot b_{i}$
-		\ENDIF
-	\ENDFOR
+		\ENDFOR
+	\ENDIF
 \ENDFOR
 \end{algorithmic}
 \end{algorithm}
