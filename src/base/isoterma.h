@@ -20,6 +20,8 @@ vector<int> calcularRadiosMasCerca(const vector<double>& temps, int cant_r, int 
     }
     radiosMasCerca[angulo] = r_mas_cerca;
   }
+
+  return radiosMasCerca;
 }
 
 /**
