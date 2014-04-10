@@ -7,7 +7,7 @@ nombre_test=''
 
 argc=$#
 
-#Determino cantidad de tests.
+# Nombre del test y resultado deseado
 if [ $argc -eq 2 ]
 then
 	nombre_test=$1
@@ -37,8 +37,14 @@ files=./testsInforme/$nombre_test/*.in
 i=1
 for f in $files
 do
+	echo "$i"
 	echo "Running $f"
-	./base/tp "$f" "testsInforme/$nombre_test/test$i.out" 0 $iso_o_temps
+	if [ $iso_o_temps -eq 0 ]
+	then
+		./base/tp "$f" "testsInforme/$nombre_test/testIso$i.out" 0 $iso_o_temps
+	else
+		./base/tp "$f" "testsInforme/$nombre_test/testTemp$i.out" 0 $iso_o_temps
+	fi
 	echo "OK"
 	i=$((i + 1))
 done
