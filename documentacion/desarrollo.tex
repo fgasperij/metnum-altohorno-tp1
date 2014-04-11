@@ -34,13 +34,7 @@ equivalentemente, buscar el vector x que cumpla $Ax=b$, siendo éstas las siguie
  T((p+1)/n,(p+1)\%n), etc.
  \item Vector b: es un vector con $n \times (m+1)$ valores que representan lo que sabemos sobre las
  temperaturas, es decir, las temperaturas internas y externas y el resultado de las ecuaciones de calor.
- Los primeros y últimos n valores son las temperaturas internas y externas respectivamente. Los puntos 
- intermedios entre ellos son todos 0s, el resultado de la ecuación de calor para ese punto. De esta forma, 
- queda subdividido en las siguientes partes: \item{submatrices inducidas} de A en las que hay una matriz
- \textbf{Identidad}, los 2 casos en la primera definición de $A_ij$ arriba, se igualaría el
- respectivo $X_i$ con su temperatura fija. En los puntos de la \textit{submatriz inducida de A} en
- los que no hay una Matriz \textbf{Identidad}, están igualados a 0 para aplicar la ecuación con
- derivadas con los multiplicadores de las incógnitas debidamente indicados por cada fila.
+ Los primeros y últimos n valores son las temperaturas internas y externas respectivamente.
 \end{itemize}
 
 Menos formalmente, sean $M_{i,j}, M_{i,i-n}, M_{i,i+n}, M_{i,i-1}$ y $ M_{i,i+1}$ los

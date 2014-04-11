@@ -1,0 +1,9 @@
+\subsection{Análisis de comparación de granularidad y tiempo}
+
+Como era de esperarse, el tiempo de ejecución es creciente con la granularidad. Lo que sí
+descubrimos en este test es que el tiempo parece crecer más que linealmente dado que la pendiente
+de la función que parecerían describir los datos es mayor que la de la función lineal que usamos
+para comparar. Esto en un principio parecería intuitivo dado que la complejidad de nuestros
+algoritmos depende de la matriz A en la ecuación Ax=b, y las dimensiones de ésta dependen de la
+granularidad, pero de la granularidad al cuadrado. Por ende, mientras más crece la granularidad más
+crece la dimensión de la matriz, pero cuadráticamente.
