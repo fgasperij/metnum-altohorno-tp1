@@ -120,5 +120,16 @@
 \end{algorithmic}
 \end{algorithm}
 
-
+\begin{algorithm}[H]
+\caption{calcularIsotermas(vector $temps$, int $isoterma$)}
+\label{pseudo:calcuIsot}
+%\renewcommand\thealgorithm{}
+\begin{algorithmic}
+\STATE $radiosMasCerca$ = obetenerRadiosMasCercas($temps$, $isoterma$)
+\STATE $isotermas$ ($\#angulos$)
+\FOR{$i=1$ hasta $\#angulos$}
+	\STATE $isotermas_i$ = promedio($radiosMasCerca_i$)
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
 
