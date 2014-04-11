@@ -3,4 +3,10 @@
 %las relaciones de la discusión sobre las que se tiene certeza, junto con comentarios
 %y observaciones generales aplicables a todo el proceso. Mencionar también posibles
 %extensiones a los métodos, experimentos que hayan quedado pendientes, etc.
+Como ya se mencionó este trabajo tiene dos secciones principales: una es la resolución se sistema de ecuaciones lineales mediante técnicas algorítmicas matriciales, y la otra es el problema de estimar una isoterma a partir de una cantidad finita de puntos con sus correspondientes temperaturas. Para la parte inicial se estudiaron principales la eliminación gaussiana y la factorización LU, pese a que son muy parecidas en su defición y en su implementación algorítmica, la segunda es preferible en caso de que se necesiten resolver el sistema para una misma matriz $A$, pero distintos vectores $b$, reduciendo el costo computacional de manera contundente. La desventaja es que la factorización LU no siempre existe, sin embargo, siempre que exista es preferible utilizarla antes que la eliminación gaussiana clásica, mas aun, cuanto más vectores b distintos allá, mayor es la diferencia entre ambos algoritmos. Cabe señalar que la factorización LU no requiere espacio de memoria adicional ni agrega complejidad al algoritmo de eliminación gaussiana sin pivoteo.
+Durante la segunda parte se analizó como se modifica la isoterma al variar las condiciones de borde y las disretizaciones
+
+
+
+
 
