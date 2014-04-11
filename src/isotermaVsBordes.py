@@ -7,11 +7,11 @@ from random import seed
 
 def main(arg = argv):
 	ri = 10
-	re = 20
+	re = 1000
 	iso = 1500
-	inst = 20
-	m = 20
-	n = 20
+	inst = 40
+	m = 150
+	n = 3
 
 	i = 1
 
@@ -30,13 +30,14 @@ def main(arg = argv):
 	f.write( str(inst) )
 	f.write("\n")
 	# Escribo temperaturas externas e internas
-	for temp in range(2000, 3000, 50):
+	iter = 0
+	for temp in range(2000, 3000, 25):
 		arr_temp_int = []
 		arr_temp_ext = []
 
 		for j in range(n):
 			arr_temp_int.append(temp)
-			arr_temp_ext.append(temp-50)
+			arr_temp_ext.append(1000-10*iter)
 
 		for j in range(n):
 			f.write( str(arr_temp_int[j]) )
@@ -47,6 +48,8 @@ def main(arg = argv):
 			f.write(" ")
 
 		f.write("\n")
+
+		iter += 1
 	
 	f.close()
 				

@@ -7,14 +7,18 @@ from random import seed
 
 def main(arg = argv):
 	ri = 10
-	re = 20
-	iso = 1500
+	re = 1000
+	iso = 5000
+	n = 3
 	inst = 1
-	temp_int = 2000
-	temp_ext = 1000	
+	temp_int = 10000
+	temp_ext = 50
 
-	for i in range(5,10):
-		f = open('./testsInforme/isotermaVsGranularidad/test'+str(i)+'.in', 'w')
+	k = 1
+
+	for i in range(5,150,5):
+		f = open('./testsInforme/isotermaVsGranularidad/test'+str(k)+'.in', 'w')
+		k += 1
 		# Escribo datos basicos
 		f.write(  str(ri) )
 		f.write(" ")
@@ -22,7 +26,7 @@ def main(arg = argv):
 		f.write(" ")
 		f.write(  str(i) )
 		f.write(" ")
-		f.write(  str(i) )
+		f.write(  str(n) )
 		f.write(" ")
 		f.write(  str(iso) )
 		f.write(" ")
@@ -32,15 +36,15 @@ def main(arg = argv):
 		arr_temp_int = []
 		arr_temp_ext = []
 
-		for j in range(i):
+		for j in range(n):
 			arr_temp_int.append(temp_int)
 			arr_temp_ext.append(temp_ext)
 
-		for j in range(i):
+		for j in range(n):
 			f.write( str(arr_temp_int[j]) )
 			f.write(" ")
 
-		for j in range(i):
+		for j in range(n):
 			f.write( str(arr_temp_ext[j]) )
 			f.write(" ")
 
