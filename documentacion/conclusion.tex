@@ -3,9 +3,30 @@
 %las relaciones de la discusión sobre las que se tiene certeza, junto con comentarios
 %y observaciones generales aplicables a todo el proceso. Mencionar también posibles
 %extensiones a los métodos, experimentos que hayan quedado pendientes, etc.
-Como ya se mencionó este trabajo tiene dos secciones principales: una es la resolución se sistema de ecuaciones lineales mediante técnicas algorítmicas matriciales, y la otra es el problema de estimar una isoterma a partir de una cantidad finita de puntos con sus correspondientes temperaturas. Para la parte inicial se estudiaron principales la eliminación gaussiana y la factorización LU, pese a que son muy parecidas en su defición y en su implementación algorítmica, la segunda es preferible en caso de que se necesiten resolver el sistema para una misma matriz $A$, pero distintos vectores $b$, reduciendo el costo computacional de manera contundente. La desventaja es que la factorización LU no siempre existe, sin embargo, siempre que exista es preferible utilizarla antes que la eliminación gaussiana clásica, mas aun, cuanto más vectores b distintos allá, mayor es la diferencia entre ambos algoritmos. Cabe señalar que la factorización LU no requiere espacio de memoria adicional ni agrega complejidad al algoritmo de eliminación gaussiana sin pivoteo.
-Durante la segunda parte se analizó como se modifica la isoterma al variar las condiciones de borde y las disretizaciones
+Como ya se mencionó, este trabajo tiene dos secciones principales: una es la resolución se sistema de 
+ecuaciones lineales mediante técnicas algorítmicas matriciales, y la otra es el problema de estimar una 
+isoterma a partir de una cantidad finita de puntos con sus correspondientes temperaturas. Para la parte 
+inicial se estudió la eliminación gaussiana y la factorización LU. Pese a que son muy 
+parecidas en su defición y en su implementación algorítmica, es preferible usar la segunda en caso
+de que se necesite resolver un sistema para una misma matriz $A$, pero distintos vectores $b$ 
+ya que reduce el costo computacional de manera contundente. 
 
+Una desventaja es que la factorización LU no siempre existe. Sin embargo, siempre que exista es
+preferible utilizarla antes que la eliminación gaussiana clásica. Más aun, cuanto más vectores 
+b distintos haya, mayor será diferencia entre ambos algoritmos. Cabe señalar que la factorización LU no 
+requiere espacio de memoria adicional ni agrega complejidad al algoritmo de eliminación gaussiana sin pivoteo.
+
+En el caso de los tests con la isoterma, nuestros algoritmos se acercaron a lo que se esperaría de
+la realidad, o la realidad se acercó a lo que se esperaba de nuestros algoritmos, cómo se quiera
+verlo. Mientras más ricos seamos en la industria del tiempo de cómputo, más granularidad podremos
+permitirnos comprar, y más exacta será nuestra isoterma.
+
+También fue el caso que la isoterma tendía a acercarse a la pared que más debía acercarse según
+nuestras predicciones, confirmando empíricamente que nuestras acepciones sobre las leyes físicas y
+nuestro entendimiento de la fórmula de expansión del calor eran correctas.
+
+Como trabajo práctico en general, fue una experiencia nueva. Aprendimos a prestarle más atención al
+por qué hacíamos las cosas en vez de cómo hacerlas.
 
 
 
