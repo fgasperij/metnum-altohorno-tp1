@@ -7,12 +7,16 @@
 \BOOKMARK [3][-]{subsubsection.2.2.3}{Test de isoterma en funci\363n de las condiciones de borde}{subsection.2.2}
 \BOOKMARK [3][-]{subsubsection.2.2.4}{Test de tiempo en funci\363n de la granularidad de la discretizaci\363n}{subsection.2.2}
 \BOOKMARK [1][-]{section.3}{Resultados}{}
-\BOOKMARK [2][-]{subsection.3.1}{Gauss vs LU}{section.3}
-\BOOKMARK [2][-]{subsection.3.2}{Granularidad vs Tiempo}{section.3}
+\BOOKMARK [2][-]{subsection.3.1}{Test de isoterma en funci\363n de la granularidad de la discretizaci\363n}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Test de comparaci\363n Gauss vs LU}{section.3}
+\BOOKMARK [2][-]{subsection.3.3}{Test de isoterma en funci\363n de las condiciones de borde}{section.3}
+\BOOKMARK [2][-]{subsection.3.4}{Test de tiempo en funci\363n de la granularidad de la discretizaci\363n}{section.3}
 \BOOKMARK [1][-]{section.4}{Discusi\363n}{}
-\BOOKMARK [2][-]{subsection.4.1}{An\341lisis de comparaci\363n Gauss contra LU}{section.4}
-\BOOKMARK [2][-]{subsection.4.2}{An\341lisis de comparaci\363n de granularidad y tiempo}{section.4}
+\BOOKMARK [2][-]{subsection.4.1}{An\341lisis de comparaci\363n isoterma contra granularidad}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{An\341lisis de comparaci\363n Gauss contra LU}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{An\341lisis de comparaci\363n isoterma en funci\363n de las condiciones de borde}{section.4}
+\BOOKMARK [2][-]{subsection.4.4}{An\341lisis de comparaci\363n de granularidad y tiempo}{section.4}
 \BOOKMARK [1][-]{section.5}{Conclusiones}{}
 \BOOKMARK [1][-]{section.6}{Ap\351ndices}{}
 \BOOKMARK [2][-]{subsubsection.6.0.1}{Demostraci\363n de la proposici\363n}{section.6}
-\BOOKMARK [1][-]{section.7}{Referencias}{}
+\BOOKMARK [1][-]{subsubsection.6.0.1}{Referencias}{}

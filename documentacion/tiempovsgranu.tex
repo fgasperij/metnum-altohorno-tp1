@@ -1,9 +1,20 @@
 \subsection{Análisis de comparación de granularidad y tiempo}
+Como era de esperarse, el tiempo de ejecución es creciente con la granularidad y, además,
+aparentaría ser cúbico con una función con multiplicadores extraños. Esto no debería ser de
+demasiada sorpresa dado que estamos midiendo en segundos y el tiempo es siempre menor a 15 segundos.
+Si tenemos en cuenta esto y además que la granularidad va desde $30^2$ hasta $100^2$, no parece tan
+alocado tener que dividir por $10^{11}$ y multiplicar por 2.
 
-Como era de esperarse, el tiempo de ejecución es creciente con la granularidad. Lo que sí
-descubrimos en este test es que el tiempo parece crecer más que linealmente dado que la pendiente
-de la función que parecerían describir los datos es mayor que la de la función lineal que usamos
-para comparar. Esto en un principio parecería intuitivo dado que la complejidad de nuestros
-algoritmos depende de la matriz A en la ecuación Ax=b, y las dimensiones de ésta dependen de la
-granularidad, pero de la granularidad al cuadrado. Por ende, mientras más crece la granularidad más
-crece la dimensión de la matriz, pero cuadráticamente.
+Éste fue un test satisfactorio dado que ocurrió lo que esperábamos: poder acotar el crecimiento de
+los tiempos por una función cúbica y sin resultados extraños inesperados. Sí hay algunas pequeñas
+irregularidades en los puntos, pero, aunque incomprobable, bien podría ser responsabilidad del
+scheduler del sistema operativo u otra de todas las variables que podrían haber afectado mínimamente
+los resultados, aún sacando promedio en 5 instancias.
+
+% % Lo que sí
+% descubrimos en este test es que el tiempo parece crecer más que linealmente dado que la pendiente
+% de la función que parecerían describir los datos es mayor que la de la función lineal que usamos
+% para comparar. Esto en un principio parecería intuitivo dado que la complejidad de nuestros
+% algoritmos depende de la matriz A en la ecuación Ax=b, y las dimensiones de ésta dependen de la
+% granularidad, pero de la granularidad al cuadrado. Por ende, mientras más crece la granularidad más
+% crece la dimensión de la matriz, pero cuadráticamente.
