@@ -48,4 +48,7 @@ struct Data{
 #define VERT 0
 #define HORIZ 1
 
+#define FILA 0
+#define COLUMNA 1
+
 #endif

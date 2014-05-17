@@ -34,39 +34,73 @@ template<class T>
 class Matriz{
 	private:
 		vector< vector<T> > matriz; //Matriz "fisica" donde se guardan los datos.
-		Pos posiciones; //Pos[i] = Numero de fila de la matriz anterior que se encuentra en la posicion i.
+		Pos posiciones_x; //Pos[i] = Numero de fila de la matriz anterior que se encuentra en la posicion i.
+		Pos posiciones_y; //Pos[i] = Numero de columna de la matriz anterior que se encuentra en la posicion i.
+		T escalar;
+		T sumando;
+		bool transpuesta;
 	public:
-		Matriz();
+		
+		class vectorMatriz{
+			friend class Matriz;
+			public:
+			T& operator[](int j){
+				return parent->matriz[i][j];
+			}
+			private:
+			vectorMatriz(Matriz<T>* matriz, int fila){
+				parent = matriz;
+				i = fila;
+			}
+			Matriz<T>* parent;
+			int i;
+		};
+		Matriz(){
+			escalar = 1;
+			sumando = 0;
+			transpuesta = false;
+		};
 		// Crea una matriz con cant_filas y cant_columnas y la llena con ceros.
 		Matriz(int tamanio, T val = 0){
-            int cant_filas = tamanio; int cant_columnas = tamanio;
-            vector< vector<T> > m = vector< vector<T> > (cant_filas);
-            for(int i = 0; i < cant_filas; i++){
-                m[i] = vector<T> (cant_columnas, val);
-            }
-            matriz = m;
+           		 int cant_filas = tamanio; int cant_columnas = tamanio;
+           		 vector< vector<T> > m = vector< vector<T> > (cant_filas);
+           		 for(int i = 0; i < cant_filas; i++){
+                		m[i] = vector<T> (cant_columnas, val);
+            		}		
+            		matriz = m;
 			//matriz = crearMatrix(tamanio, tamanio);
-			posiciones = crearPosiciones(tamanio);
+			posiciones_x = crearPosiciones(tamanio);
 		}
 		Matriz(int cant_filas, int cant_columnas, T val = 0){
-            vector< vector<T> > m = vector< vector<T> > (cant_filas);
-            for(int i = 0; i < cant_filas; i++){
-                m[i] = vector<T> (cant_columnas, val);
-            }
-            matriz = m;
+		    	vector< vector<T> > m = vector< vector<T> > (cant_filas);
+		        for(int i = 0; i < cant_filas; i++){
+		        m[i] = vector<T> (cant_columnas, val);
+		    	}
+		   	matriz = m;
 			//matriz = crearMatrix(cant_filas, cant_columnas);
-			posiciones = crearPosiciones(cant_filas);
+			posiciones_x = crearPosiciones(cant_filas);
 		}
 		// Intercambiar dos filas, es intercambiar dos numeritos en el vector posiciones.
-		void intercambiar(int i, int j){
-			if(i != j){
-				int temp = posiciones[i];
-				this->posiciones[i] = posiciones[j];
-				this->posiciones[j] = temp;
+		void intercambiar(int i, int j, int tipo = FILA){
+			if(tipo == FILA){
+				if(i != j){
+					int temp = posiciones_x[i];
+					this->posiciones_x[i] = posiciones_x[j];
+					this->posiciones_x[j] = temp;
+				}
 			}
+//			else{
+//				if(i != j){
+//					int temp = posiciones[i];
+//					this->posiciones_y[i] = posiciones_y[j];
+//					this->posiciones_y[j] = temp;
+//				}
+//			}
 		}
-		vector<T>& operator[](int i){
-			return matriz[posiciones[i]];
+
+		T& operator[](int i){
+			//return matriz[posiciones[i]];
+			return vectorMatriz(*this, posiciones_x[i]);
 		}
 
 

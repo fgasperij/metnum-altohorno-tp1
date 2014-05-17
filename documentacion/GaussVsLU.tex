@@ -6,10 +6,6 @@ cantidad de vectores $b$ (a partir de ahora simplemente ``instancias'') a calcul
 \ref{gaussVsLU4} se puede observar como la diferencia es proporcional tanto a la cantidad de instancias como al 
 tamaño de las matrices, es decir, al aumentar la cantidad de instancias y/o el tamaño de la matriz LU aumenta 
 la diferencia con respecto a Gauss. Por otro lado en \ref{gaussVsLU5} se puede determinar que basta con resolver el 
-sistema de ecuacionescon sólo dos vectores $b$ distintos para poder ya apreciar una ventaja efectiva sobre la eliminación gaussiana 
+sistema de ecuaciones con sólo dos vectores $b$ distintos para poder ya apreciar una ventaja efectiva sobre la eliminación gaussiana 
 y que para el caso en que solo haya un sólo vector $b$, los tiempos de cómputo son prácticamente idénticos, es decir la 
-\emph{forward substitution} extra no agrega \emph{overhead} al cálculo de la solución. También es posible notar que para 
-los diferentes tamaños matriciales, la relación se mantiene para una misma cantidad de instancias, y que dicha relación 
-muestra una incremento significativo a medida que se se incrementa la cantidad de instancias, por lo que se puede determinar 
-que el factor más importante que influye sobre la diferencia de rendimiento entre eliminación gaussiana es la cantidad de 
-instancias y no tanto el tamaño de la matriz.
+\emph{forward substitution} extra no agrega \emph{overhead} al cálculo de la solución.

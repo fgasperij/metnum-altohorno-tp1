@@ -185,4 +185,6 @@ void forwSubst(Matriz<T>& A, vector<T>& b, vector<T>& res, int lu = NO_LU){
     }
 }
 
+
+
 #endif

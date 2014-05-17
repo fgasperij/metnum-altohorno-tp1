@@ -16,18 +16,19 @@
 using namespace std;
 
 int main(int argc, char** argv){
-    if(argc != 5){cerr << "Error: argumentos insuficientes" << endl;return -1;}
+    if(argc != 4 && argc != 5){cerr << "Error: argumentos insuficientes" << endl;return -1;}
     Data data;
     leerDatosBasicos(argv[1], data);
     Matriz<double> A (data.n*data.m);    //Creo la matriz con ceros.
     vector<double> b (data.n*data.m, 0);    // Creo el vector b, nuevamente con ceros.
-
+    double tc = 0;
     for(int i = 0; i < data.c; i++){
 
         vector<double> temps (data.n*data.m);
 	vector<double> res_final (data.n*data.m);
         leerDatosAvanzados(argv[1], data, i+1);  //Leo datos avanzados.
         plantearSistema(A, b, data, VECTOR_b);    // Planteo el sistema, es decir actualizo b.
+
         if(atoi(argv[3]) == EG){
 	//Gauss:
             if(i != 0){
@@ -35,8 +36,10 @@ int main(int argc, char** argv){
                 b = vector<double> (data.n*data.m, 0);
             }
             plantearSistema(A, b, data);
+	    init_time();
             gaussInf(A, b, NO_PIV);
             backSubst(A, b, temps);
+	    tc += get_time();
 
 	    res_final = temps;
 
@@ -45,12 +48,16 @@ int main(int argc, char** argv){
             if(i == 0){
                 plantearSistema(A, b, data, MATRIZ_A); gaussInf(A, b, NO_PIV, LU);
             }
+	    init_time();
             forwSubst(A, b, temps, LU);
+	    tc += get_time();
             vector<double> temps_lu = vector<double> (data.n*data.m);
+	    init_time();
             backSubst(A, temps, temps_lu);
+	    tc += get_time();
             res_final = temps_lu;
         }
-	if(atoi(argv[4]) == ISO){
+	if(argc == 5 && atoi(argv[4]) == ISO){
 	//Escribir Isoterma 
             // calculo de la isoterma
             double rad = data.rad_ext - data.rad_int;
