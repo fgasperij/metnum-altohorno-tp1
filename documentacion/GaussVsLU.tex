@@ -5,7 +5,7 @@ tiempo de la eliminación gaussiana, y esta diferencia se hace sumamente notoria
 cantidad de vectores $b$ (a partir de ahora simplemente ``instancias'') a calcular aumenta. En el gráfico 
 \ref{gaussVsLU4} se puede observar como la diferencia es proporcional tanto a la cantidad de instancias como al 
 tamaño de las matrices, es decir, al aumentar la cantidad de instancias y/o el tamaño de la matriz LU aumenta 
-la diferencia con respecto a Gauss. Para los cuatros tamaño de matrices probados la curva de crecimiento del tiempo total de cómputo en función de la cantidad de instancais es muy similar. Por otro lado en \ref{gaussVsLU5} se puede determinar que basta con resolver el 
+la diferencia con respecto a Gauss. Para los cuatros tamaño de matrices probados la curva de crecimiento del tiempo total de cómputo en función de la cantidad de instancias es muy similar. Por otro lado en \ref{gaussVsLU5} se puede determinar que basta con resolver el 
 sistema de ecuaciones con sólo dos vectores $b$ distintos para poder ya apreciar una ventaja efectiva sobre la eliminación gaussiana 
 y que para el caso en que solo haya un sólo vector $b$, los tiempos de cómputo son prácticamente idénticos, es decir la 
-\emph{forward substitution} extra no agrega \emph{overhead} al cálculo de la solución.
+\emph{forward substitution} extra no agrega \emph{overhead} al cálculo de la solución. EN el gráfico \ref{gaussVsLU6} se aprecia como evoluciona la ventaja de LU sobre Gauss. Para las matrices 10 y 30 ángulos y radios la ventaja es prácticamente constante, sin embargo la matrices de 50 ángulos y radios, la ventaja crece en función de la cantidad de instancias confirmando lo visto en los anteriores gráficos, la superioridad de LU sobre Gauss.
