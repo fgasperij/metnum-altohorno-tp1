@@ -1,81 +1,22 @@
 \documentclass[10pt, a4paper]{article}
-\input{macrostp2.tex}
-\usepackage{hyperref}
-\usepackage{color}
-\usepackage{paralist}
-\usepackage{multirow}
-\usepackage{footnote}
-\makesavenoteenv{tabular}
-\usepackage{pdflscape}
-\usepackage{enumitem}
-\usepackage{amsmath}
-\usepackage{caption}
-\usepackage{subcaption}
+\input{config/paquetes.tex}
+\input{config/variables.tex}
 
-\usepackage{lscape}
-
-%El siguiente paquete permite escribir la caratula facilmente
-\usepackage{caratula}
-\hypersetup{
-  pdftitle={ Métodos Numéricos - TP1 },
-  colorlinks,
-  citecolor=black,
-  filecolor=black,
-  linkcolor=black,
-  urlcolor=black
-}
-
-
-
-\newlength{\AnchoEncabezados}\setlength{\AnchoEncabezados}{6em}
-\newcommand{\EncabezadoInline}[2]{
-
-    \setlength{\hangindent}{\tadAnchoEncabezados + \parindent}%
-
-        \parbox{\AnchoEncabezados}{\textbf{#1}}#2%
-}
-
-
-
-\newcommand{\Encabezado}[2]{%
-    \par\EncabezadoInline{#1}{#2}\par%
-}
-
-\newcommand{\funcion}[2]{\textbf{#1}{#2}\BlankLine}
-
-\newcommand{\myFuncion}[3]{
-	\begin{algorithm}[H][H]
-	\dontprintsemicolon
-	{\bf {#1}} {#2}\;
-	\nocaptionofalgo
-	\Indp
-	{#3}
-	\Indm
-	\BlankLine
-	\end{algorithm}
-}
-
-%Datos para la caratula
-\materia{Métodos Numéricos}
-
-\titulo{TP I - Métodos Numéricos}
-
-%\fecha{DDDD dd de MMMM, AAAA}
-
-\grupo{Grupo 2}
-
-\integrante{Alejandro Dan\'os}{381/10}{adp007@msn.com}
-\integrante{Franco}{}{}
-\integrante{Fernando}{56/09}{yolibertino@gmail.com}
-\integrante{Ana Sarri\'es}{144/02}{abarloventos@gmail.com}
 \begin{document}
+\input{config/caratula.tex}
 
- %esto construye la caratula
- \maketitle
- \tableofcontents
+\newcommand{\cod}[1]{{\tt #1}}
+\newcommand{\negro}[1]{{\bf #1}}
+\newcommand{\ital}[1]{{\em #1}}
+\newcommand{\may}[1]{{\sc #1}}
+\newcommand{\tab}{\hspace*{2em}}
 
-
-\newpage
+\newenvironment{myindentpar}[1]
+{\begin{list}{1}
+         {\setlength{\leftmargin}{#1}}
+         \item[]
+}
+{\end{list} }
 
 \input{intro.tex}
 
@@ -93,6 +34,5 @@
 
 \newpage
 \bibliographystyle{plain}
-
 
 \end{document}

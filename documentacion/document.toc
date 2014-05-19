@@ -2,22 +2,22 @@
 \contentsline {section}{\numberline {1}Introducci\IeC {\'o}n Te\IeC {\'o}rica}{3}{section.1}
 \contentsline {section}{\numberline {2}Desarrollo}{3}{section.2}
 \contentsline {subsection}{\numberline {2.1}Algoritmos}{4}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Tests}{6}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Test de isoterma en funci\IeC {\'o}n de la granularidad de la discretizaci\IeC {\'o}n}{6}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Test de comparaci\IeC {\'o}n Gauss vs LU}{6}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Test de isoterma en funci\IeC {\'o}n de las condiciones de borde}{6}{subsubsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.4}Test de tiempo en funci\IeC {\'o}n de la granularidad de la discretizaci\IeC {\'o}n}{6}{subsubsection.2.2.4}
-\contentsline {section}{\numberline {3}Resultados}{7}{section.3}
-\contentsline {subsection}{\numberline {3.1}Test de isoterma en funci\IeC {\'o}n de la granularidad de la discretizaci\IeC {\'o}n}{7}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Test de comparaci\IeC {\'o}n Gauss vs LU}{7}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Test de isoterma en funci\IeC {\'o}n de las condiciones de borde}{10}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Test de tiempo en funci\IeC {\'o}n de la granularidad de la discretizaci\IeC {\'o}n}{11}{subsection.3.4}
-\contentsline {section}{\numberline {4}Discusi\IeC {\'o}n}{12}{section.4}
-\contentsline {subsection}{\numberline {4.1}An\IeC {\'a}lisis de comparaci\IeC {\'o}n isoterma contra granularidad}{12}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}An\IeC {\'a}lisis de comparaci\IeC {\'o}n Gauss contra LU}{12}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}An\IeC {\'a}lisis de comparaci\IeC {\'o}n isoterma en funci\IeC {\'o}n de las condiciones de borde}{12}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}An\IeC {\'a}lisis de comparaci\IeC {\'o}n de granularidad y tiempo}{13}{subsection.4.4}
-\contentsline {section}{\numberline {5}Conclusiones}{13}{section.5}
-\contentsline {section}{\numberline {6}Ap\IeC {\'e}ndices}{13}{section.6}
-\contentsline {subsubsection}{\numberline {6.0.1}Demostraci\IeC {\'o}n de la proposici\IeC {\'o}n}{13}{subsubsection.6.0.1}
-\contentsline {section}{Referencias}{14}{subsubsection.6.0.1}
+\contentsline {subsection}{\numberline {2.2}Tests}{7}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Test de isoterma en funci\IeC {\'o}n de la granularidad de la discretizaci\IeC {\'o}n}{7}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Test de comparaci\IeC {\'o}n Gauss vs LU}{7}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Test de isoterma en funci\IeC {\'o}n de las condiciones de borde}{8}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Test de tiempo en funci\IeC {\'o}n de la granularidad de la discretizaci\IeC {\'o}n}{8}{subsubsection.2.2.4}
+\contentsline {section}{\numberline {3}Resultados}{9}{section.3}
+\contentsline {subsection}{\numberline {3.1}Test de isoterma en funci\IeC {\'o}n de la granularidad de la discretizaci\IeC {\'o}n}{9}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Test de comparaci\IeC {\'o}n Gauss vs LU}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Test de isoterma en funci\IeC {\'o}n de las condiciones de borde}{15}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Test de tiempo en funci\IeC {\'o}n de la granularidad de la discretizaci\IeC {\'o}n}{18}{subsection.3.4}
+\contentsline {section}{\numberline {4}Discusi\IeC {\'o}n}{19}{section.4}
+\contentsline {subsection}{\numberline {4.1}An\IeC {\'a}lisis de comparaci\IeC {\'o}n isoterma contra granularidad}{19}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}An\IeC {\'a}lisis de comparaci\IeC {\'o}n Gauss contra LU}{19}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}An\IeC {\'a}lisis de comparaci\IeC {\'o}n isoterma en funci\IeC {\'o}n de las condiciones de borde}{20}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}An\IeC {\'a}lisis de comparaci\IeC {\'o}n de granularidad y tiempo}{20}{subsection.4.4}
+\contentsline {section}{\numberline {5}Conclusiones}{20}{section.5}
+\contentsline {section}{\numberline {6}Ap\IeC {\'e}ndices}{21}{section.6}
+\contentsline {subsubsection}{\numberline {6.0.1}Demostraci\IeC {\'o}n de la proposici\IeC {\'o}n}{21}{subsubsection.6.0.1}
+\contentsline {section}{Referencias}{22}{subsubsection.6.0.1}
