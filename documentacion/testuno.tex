@@ -6,32 +6,23 @@
 % misma en todas las instancias, $m = n$. El objetivo es poder aislar el factor granularidad y ver de
 % qué forma este afecta a la isoterma obtenida.
 
-En nuestra primera experimentación, analizaremos cómo iría cambiando la posición de la isoterma en
-función de la granularidad de la discretización. Para ello, fijaremos a $r_i$, $r_e$,
-$T_i(\theta_j)$, $T_e(\theta_j)$ e $iso$ para poder concentrarnos sólo en la isoterma\footnote{Los
+En nuestra primera experimentación, analizaremos el comportamiento de la posición de la isoterma en
+función de la granularidad de la discretización utilizada. Para ello, fijaremos a los valores de$r_i$, $r_e$,
+$T_i(\theta_j)$, $T_e(\theta_j)$ e $iso$ para poder aislar el comportamiento de la isoterma\footnote{Los
   valores están especificados abajo y fueron elegidos luego de varios tests}
-%j
-  DEEEEEEEEEEEEEEEEEEECIRRRRRRRR CUÁAAAAALES SOOOOOOOON ESTOOOOS VALOOOOOORES Y POR QUÉEEEEEEEEEE.
-  %%
-Otra decisión fue tomar a la cantidad de ángulos y la cantidad de radios iguales para cada
-instancia, es decir, $n=m$, para facilitar el test.  Esto significaría que nuestra matriz será
-cuadrada con dimensiones $\mathbb{R}^{n*(n+1) \times n*(n+1)}$. Se podría testear en un futuro las
-implicancias de variar ambos al mismo tiempo. También para tener en cuenta es el hecho que la matriz
+Además, con la misma motivación, tomamos una cantidad de ángulos y radios iguales para cada
+instancia, es decir, $n=m$, para facilitar el test.  Esto representa que la matriz resultante será
+cuadrada y de dimensiones $\mathbb{R}^{n*(n+1) \times n*(n+1)}$. No vamos a considerar el caso
+en el que la cantidad de ángulos y radios varíe de forma distinta. Es destacable el hecho de que la matriz
 es una \textit{matriz banda} dado que en cada fila $i$ se tienen sólo 5 datos no nulos, y todos
-ellos entre las columnas $j-n$ y $j+n$. Esto último significaría que los datos a guardados por cada
-fila son mucho mayores a los realmente usados, por lo que en alguna futura expansión de este trabajo
-se podría adaptar el algoritmo a este hecho y disminuir su complejidad espacial rotundamente.
-
-Finalmente, como las temperaturas externas e internas están fijas, no es necesario calcular la
-isoterma por cada ángulo dado que estarán siempre en el mismo radio para cada uno de ellos. Esto se
+ellos entre las columnas $j-n$ y $j+n$. Esto último significa que los datos guardados por cada
+fila son mucho mayores a los realmente usados, por lo que una mejora posible sería adaptar el algoritmo a 
+este hecho y disminuir su complejidad espacial rotundamente.
+Finalmente, queremos aclarar que al estar las temperaturas externas e internas fijas, no es necesario calcular la
+isoterma por cada ángulo dado que lo anterior implica que no variará. Esto se
 debe a que entre los ángulos no hay diferencia, y según las propiedades del calor enunciadas por la
 cátedra éste se comportaría igual en cada uno de los ángulos.
-
-
-ACÁ PONER LOS VALORES ELEGIDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOS
-
-
-Sobre este test esperamos que a medida aumente la granularidad, la isoterma vaya tendiendo a un
-punto dado que aumentaríamos la precisión con la cual la buscamos. Parece intuitivo que mientras más
+Esperamos que el aumento de la granularidad en la discretización produzca que el valor de la isoterma converja
+ya que aumentar la granularidad es equivalente a aumentar la precisión de la búsqueda. Parece intuitivo que mientras más
 extensa sea la \textit{grilla} por la cual dividimos al horno, más nos estaríamos acercando al caso
 real continuo.

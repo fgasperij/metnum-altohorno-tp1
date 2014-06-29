@@ -5,12 +5,11 @@
 %simétrica). En vez de definiciones básicas es conveniente citar ejemplos de bibliografía adecuada.
 %Una cita vale más que mil palabras.
 %
-Dado un horno industrial de gran tamaño, se estudia en este trabajo la búsqueda de una isoterma dada
-en las paredes de éste. Dado que computacionalmente es imposible analizar el problema para
-dimensiones continuas para la pared, se lo discretiza según información dada. Esta información
-requerida del horno sería el radio en la parte interna de la pared, la cantidad de ángulos en el cual
-discretizarlo, el radio en la parte externa de la pared, la temperatura interna, la temperatura
-externa y la isoterma buscada. Se adjunta un gráfico para verlo con más claridad.
+En el presente trabajo estudiaremos diferentes métodos para la búsqueda de una isoterma en un la pared de un
+horno industrial. Dado que computacionalmente es imposible analizar el problema para
+funciones continuas lo discretizaremos. Los parámetros necesarios para calcular la isoterma con
+el radio interno del horno, la cantidad de ángulos de la discretización, el radio externo del horno, 
+la temperatura interna, la temperatura externa y la isoterma buscada. Se adjunta un gráfico para verlo con más claridad:
 
 \begin{figure}[ht]
   \begin {center}
@@ -19,7 +18,7 @@ externa y la isoterma buscada. Se adjunta un gráfico para verlo con más clarid
   \end{center}
 \end{figure}
 
-Para lograr lo pedido, en nos enfocamos en la resolución de sistemas matriciales del tipo $Ax=b$,
+Para lograrlo, nos enfocamos en la resolución de sistemas matriciales del tipo $Ax=b$,
 donde $A$ es una matriz inversible con coeficientes reales. El método clásico por excelencia para
 este tipo de problemas es la eliminación gaussiana que básicamente consiste en aplicar operaciones
 elementales de fila sobre la matriz $A$ y el vector $b$ para poder simplificar el sistema de
